@@ -136,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const rect = container.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
+    if (width === 0 || height === 0) return;
     const dpr = window.devicePixelRatio || 1;
 
     // Set canvas dimensions scaled by DPR
@@ -152,16 +153,14 @@ document.addEventListener("DOMContentLoaded", () => {
     initDots(width, height);
   }
 
-  // Hook resize handler
+  // Hook resize handler using ResizeObserver to dynamically adapt to container size changes
   let resizeTimeout;
-  window.addEventListener("resize", () => {
+  const resizeObserver = new ResizeObserver(() => {
     // Debounce resize to prevent stuttering
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(resize, 100);
+    resizeTimeout = setTimeout(resize, 50);
   });
-
-  // Set initial dimensions
-  resize();
+  resizeObserver.observe(container);
 
   // Core animation loop
   function animate() {

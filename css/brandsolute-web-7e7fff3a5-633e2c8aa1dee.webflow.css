@@ -7816,6 +7816,13 @@ figure {
   background-color: #121212 !important;
 }
 
+/* Specifically solve layout clipping and make page-title and about-hero heros full screen */
+.wide-section-content.page-title.gray-hero-bg,
+.wide-section-content.about-hero.gray-hero-bg {
+  height: calc(100svh - 18px) !important;
+  padding-bottom: 64px !important;
+}
+
 .background-effect-wrapper.gray-gradient {
   filter: grayscale(100%);
   opacity: 0.35;
