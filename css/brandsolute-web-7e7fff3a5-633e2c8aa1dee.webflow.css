@@ -7867,6 +7867,14 @@ h1.display-heading {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.engagement-content.is-in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .engagement-heading {
@@ -7893,12 +7901,28 @@ h1.display-heading {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.engagement-content.is-in-view .engagement-grid > .engagement-card:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.engagement-content.is-in-view .engagement-grid > .engagement-card:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
 }
 
 .engagement-card:hover {
   border-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .engagement-card-header {
