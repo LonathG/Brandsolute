@@ -819,6 +819,122 @@
       </div>
     </div>
   </section>
+  <section class="section engagement-section">
+    <div class="main-container">
+      <div class="vertical-content engagement-content">
+        <!-- Section Badge Label -->
+        <div data-wf--badge-title--variant="base" class="badge-title">
+          <div class="square"></div>
+          <div class="badge-text">Our Engagement Models</div>
+        </div>
+
+        <!-- Main Display Heading -->
+        <h2 class="heading-h2 engagement-heading">
+          <span class="faded-heading">Some businesses need a focused intervention. Others need a long-term growth
+            partner. </span>We structure our work around both
+        </h2>
+
+        <!-- Cards Grid -->
+        <div class="engagement-grid">
+          <!-- Card 01: Finite -->
+          <div class="engagement-card">
+            <div class="engagement-card-header">
+              <h3 class="heading-h3 engagement-card-title">Finite</h3>
+              <div class="engagement-card-number">
+                <div class="card-number-bullet"></div>
+                <div class="card-number-text">01</div>
+              </div>
+            </div>
+            <div class="body-text engagement-card-desc">
+              A clear engagement with a fixed problem, scope, timeline and output. Built for teams that need fast
+              decisive progress.
+            </div>
+            <div class="engagement-list">
+              <div class="list-item">
+                <div class="square-bullet"></div>
+                <div class="body-text">Brand strategy, rebrand or refresh</div>
+              </div>
+              <div class="list-item">
+                <div class="square-bullet"></div>
+                <div class="body-text">Website and digital experience builds</div>
+              </div>
+              <div class="list-item">
+                <div class="square-bullet"></div>
+                <div class="body-text">Dashboard or data foundation builds</div>
+              </div>
+              <div class="list-item">
+                <div class="square-bullet"></div>
+                <div class="body-text">Research, audits, and growth sprints</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 02: Infinite -->
+          <div class="engagement-card">
+            <div class="engagement-card-header">
+              <h3 class="heading-h3 engagement-card-title">Infinite</h3>
+              <div class="engagement-card-number">
+                <div class="card-number-bullet"></div>
+                <div class="card-number-text">02</div>
+              </div>
+            </div>
+            <div class="body-text engagement-card-desc">
+              A retained engagement for businesses that need strategy, execution, optimisation and ongoing support
+              across changing priorities.
+            </div>
+            <div class="engagement-list">
+              <div class="list-item">
+                <div class="square-bullet"></div>
+                <div class="body-text">Performance marketing and optimisation</div>
+              </div>
+              <div class="list-item">
+                <div class="square-bullet"></div>
+                <div class="body-text">SEO and AI search optimisation</div>
+              </div>
+              <div class="list-item">
+                <div class="square-bullet"></div>
+                <div class="body-text">Website maintenance and CRO</div>
+              </div>
+              <div class="list-item">
+                <div class="square-bullet"></div>
+                <div class="body-text">Dashboard and reporting management</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Self-contained Scroll Animation Script -->
+    <script>
+      (function () {
+        const initAnimation = () => {
+          const content = document.querySelector('.engagement-content');
+          if (!content) return;
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-in-view');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+          });
+
+          observer.observe(content);
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initAnimation);
+        } else {
+          initAnimation();
+        }
+      })();
+    </script>
+  </section>
   <section class="section bottom-padding-l">
     <div class="main-container">
       <div class="grid">
