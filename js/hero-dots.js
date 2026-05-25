@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".wide-section-content.hero-2");
   const canvas = document.getElementById("hero-dots-canvas");
-  if (!container || !canvas) return;
+  if (!canvas) return;
+  const container = canvas.parentElement;
+  if (!container) return;
 
   const ctx = canvas.getContext("2d");
 
@@ -9,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const spacing = 36; // spacing between dots in pixels
   const baseRadius = 1.0; // base radius of the dots
   const maxInfluenceRadius = 150; // mouse proximity hover influence radius
-  const maxOpacity = 0.85; // maximum opacity of dot on hover
-  const baseOpacity = 0.15; // base idle opacity of dot
+  const maxOpacity = 0.95; // maximum opacity of dot on hover
+  const baseOpacity = 0.45; // base idle opacity of dot (all dots clearly visible)
 
   // Track mouse state
   const mouse = {
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.opacity = baseOpacity;
       this.baseRadius = baseRadius;
       this.baseOpacity = baseOpacity;
+      this.hoverFactor = 0; // smooth tracking of cursor proximity glow
     }
 
     update() {
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let targetY = this.y;
       let targetRadius = this.baseRadius;
       let targetOpacity = this.baseOpacity;
+      let targetHoverFactor = 0;
 
       if (mouse.active && mouse.x !== null && mouse.y !== null) {
         const dx = mouse.x - this.x;
@@ -63,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Quadratic ease-out factor (goes from 1 at cursor to 0 at max influence radius)
           const factor = (maxInfluenceRadius - dist) / maxInfluenceRadius;
           const easeFactor = factor * factor;
+          targetHoverFactor = easeFactor;
 
           // Magnetic repulsion: shift dots slightly away from mouse
           // Max repulsion displacement is 12px
@@ -86,13 +90,25 @@ document.addEventListener("DOMContentLoaded", () => {
       this.currentY += (targetY - this.currentY) * 0.12;
       this.radius += (targetRadius - this.radius) * 0.12;
       this.opacity += (targetOpacity - this.opacity) * 0.12;
+      this.hoverFactor += (targetHoverFactor - this.hoverFactor) * 0.12;
     }
 
     draw() {
       ctx.beginPath();
       ctx.arc(this.currentX, this.currentY, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+      
+      // Render luminous glow effect on hover
+      if (this.hoverFactor > 0.01) {
+        ctx.shadowColor = 'rgba(57, 255, 20, 1)';
+        ctx.shadowBlur = this.hoverFactor * 15;
+      } else {
+        ctx.shadowBlur = 0;
+      }
+
+      // Render dots in cyber green
+      ctx.fillStyle = `rgba(57, 255, 20, ${this.opacity})`;
       ctx.fill();
+      ctx.shadowBlur = 0; // reset glow for other drawings
     }
   }
 
