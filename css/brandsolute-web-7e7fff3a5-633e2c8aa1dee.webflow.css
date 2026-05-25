@@ -7837,3 +7837,20 @@ figure {
   pointer-events: none;
   z-index: 4;
 }
+
+/* Premium White to Cyber Green Text Gradient Effect */
+.hero-gradient-text {
+  background: linear-gradient(90deg, #ffffff 0%, #c4f981 60%, #39ff14 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline;
+}
+
+/* Fix text flexbox issues: restore natural inline text flow, line breaks, word spaces, and center alignment */
+h1.display-heading {
+  display: block !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
