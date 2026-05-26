@@ -1578,14 +1578,16 @@ figure {
 
 .wide-section-content.cta {
   min-height: var(--hero-sizes--small);
-  background: radial-gradient(
-    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(108, 88, 141, 0.95) 0%,   /* brand-1: purple */
-    rgba(224, 131, 92, 0.8) 35%,   /* brand-4: coral */
-    rgba(162, 183, 159, 0.7) 65%,  /* brand-2: sage green */
-    rgba(216, 163, 115, 0.5) 85%,  /* brand-3: gold */
-    #121212 100%
-  ) !important;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(108, 88, 141, 0.95) 0%,
+      /* brand-1: purple */
+      rgba(224, 131, 92, 0.8) 35%,
+      /* brand-4: coral */
+      rgba(162, 183, 159, 0.7) 65%,
+      /* brand-2: sage green */
+      rgba(216, 163, 115, 0.5) 85%,
+      /* brand-3: gold */
+      #121212 100%) !important;
   transition: background 0.15s ease-out;
   position: relative;
   overflow: hidden;
