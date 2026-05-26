@@ -98,17 +98,17 @@ document.addEventListener("DOMContentLoaded", () => {
       draw() {
         ctx.beginPath();
         ctx.arc(this.currentX, this.currentY, this.radius, 0, Math.PI * 2);
-        
+
         // Render luminous glow effect on hover
         if (this.hoverFactor > 0.01) {
-          ctx.shadowColor = 'rgba(57, 255, 20, 1)';
+          ctx.shadowColor = 'rgba(177, 255, 164, 1)';
           ctx.shadowBlur = this.hoverFactor * 15;
         } else {
           ctx.shadowBlur = 0;
         }
 
         // Render dots in cyber green
-        ctx.fillStyle = `rgba(57, 255, 20, ${this.opacity})`;
+        ctx.fillStyle = `rgba(177, 255, 164, ${this.opacity})`;
         ctx.fill();
         ctx.shadowBlur = 0; // reset glow for other drawings
       }
@@ -179,4 +179,37 @@ document.addEventListener("DOMContentLoaded", () => {
     // Start animation loop
     requestAnimationFrame(animate);
   }
+
+  // Handle interactive hover gradient for CTA section across all pages
+  const ctaSections = document.querySelectorAll(".wide-section-content.cta");
+  ctaSections.forEach(cta => {
+    let targetX = 50;
+    let targetY = 50;
+    let currentX = 50;
+    let currentY = 50;
+
+    cta.addEventListener("mousemove", (e) => {
+      const rect = cta.getBoundingClientRect();
+      targetX = ((e.clientX - rect.left) / rect.width) * 100;
+      targetY = ((e.clientY - rect.top) / rect.height) * 100;
+    });
+
+    cta.addEventListener("mouseleave", () => {
+      // Gently return to center when mouse leaves
+      targetX = 50;
+      targetY = 50;
+    });
+
+    function updateGradient() {
+      // Butter smooth linear interpolation (lerp)
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+
+      cta.style.setProperty("--mouse-x", `${currentX}%`);
+      cta.style.setProperty("--mouse-y", `${currentY}%`);
+
+      requestAnimationFrame(updateGradient);
+    }
+    updateGradient();
+  });
 });

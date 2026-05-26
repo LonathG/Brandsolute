@@ -191,6 +191,24 @@
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
     }
+
+    .page-title-text {
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+
+    .page-title-text h1.display-heading {
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+    }
+
+    .page-title-text h2.heading-h5 {
+      justify-content: flex-start !important;
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+    }
   </style>
 </head>
 
@@ -214,19 +232,19 @@
                     <a href="about.html" class="nav-link w-nav-link">About</a>
                     <div data-hover="true" data-delay="200" class="nav-dropdown relative w-dropdown">
                       <div class="dropdown-toggle w-dropdown-toggle">
-                        <div>Services</div>
-                        <div class="square-small"></div>
+                        <div><a href="services.html" class="nav-link w-nav-link">Services</a></div>
+                        <!-- <div class="square-small"></div> -->
                       </div>
-                      <nav class="dropdown-element w-dropdown-list">
+                      <!-- <nav class="dropdown-element w-dropdown-list">
                         <div class="dropdown-narrow">
                           <a href="services.html" class="narrow-dropdown-link">Brand Strategy</a>
                           <a href="services.html" class="narrow-dropdown-link">Growth Marketing</a>
                           <a href="services.html" class="narrow-dropdown-link">Digital Experience</a>
                           <a href="services.html" class="narrow-dropdown-link">Data Intelligence</a>
                         </div>
-                      </nav>
+                      </nav> -->
                     </div>
-                    <div data-hover="true" data-delay="200" class="nav-dropdown relative w-dropdown">
+                    <!-- <div data-hover="true" data-delay="200" class="nav-dropdown relative w-dropdown">
                       <div class="dropdown-toggle w-dropdown-toggle">
                         <div>Work</div>
                         <div class="square-small"></div>
@@ -241,7 +259,7 @@
                             target="_blank" class="narrow-dropdown-link">More Templates</a>
                         </div>
                       </nav>
-                    </div>
+                    </div> -->
                     <a href="blog.html" class="nav-link w-nav-link">Blogs</a>
                     <a href="#" class="nav-link w-nav-link">Get In Touch</a>
                     <div class="nav-button-wrapper">
@@ -300,7 +318,7 @@
             </div>
             <h2 class="heading-h5">Stay up to date with the latest news and resources from the Scion team.</h2>
           </div>
-          <div class="category-selector">
+          <!-- <div class="category-selector">
             <div class="badge-text categories-title">categories</div>
             <a href="blog.html" aria-current="page" class="category-link w-inline-block w--current">
               <div class="category-text">all</div>
@@ -319,7 +337,7 @@
                 <div>No items found.</div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <canvas class="grid-bg interactive-dots" id="hero-dots-canvas"></canvas>
