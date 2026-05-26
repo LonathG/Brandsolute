@@ -223,6 +223,106 @@
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
     }
+
+    /* 1. Remove the sticky effect in the cards of services.html specifically */
+    .industry-section {
+      position: static !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      z-index: auto !important;
+      padding-top: 80px !important;
+      padding-bottom: 80px !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Increase the bottom spacing of the Card Title */
+    .industry-detail-card .heading-h3 {
+      margin-bottom: 28px !important;
+    }
+
+    .industry-detail-card {
+      background-color: transparent !important;
+    }
+
+    /* 2. Increase the width of the context cards and keep the image cards as it is */
+    .industry-grid {
+      grid-column-gap: 64px !important;
+      grid-row-gap: 64px !important;
+      align-items: center !important;
+    }
+
+    .industry-grid:has(> :first-child.industry-sidebar) {
+      grid-template-columns: 1fr 1.4fr !important;
+    }
+
+    .industry-grid:has(> :first-child.industry-detail-card) {
+      grid-template-columns: 1.4fr 1fr !important;
+    }
+
+    /* 3. Make all the sentences in the capsules single lines (No two lines) */
+    .quick-stack {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      align-content: flex-start !important;
+      grid-column-gap: 0 !important;
+      grid-row-gap: 0 !important;
+      gap: 12px 10px !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      margin-top: 24px !important;
+      margin-bottom: 24px !important;
+      width: 100% !important;
+    }
+
+    .quick-stack .w-layout-cell {
+      display: contents !important;
+    }
+
+    .quick-stack .button-3 {
+      font-family: Poppins, Inter, sans-serif !important;
+      background-color: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 100px !important;
+      color: rgba(255, 255, 255, 0.6) !important;
+      padding: 8px 20px !important;
+      font-size: 14px !important;
+      font-weight: 400 !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      display: inline-block !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+      width: auto !important;
+      margin: 0 !important;
+    }
+
+    /* First child (Active) pill in the quick-stack grid */
+    .quick-stack .w-layout-cell:first-child .button-3 {
+      border-color: #c2ff7e !important;
+      color: #c2ff7e !important;
+      box-shadow: 0 0 12px rgba(194, 255, 126, 0.2) !important;
+    }
+
+    /* Active pill hover glow effect */
+    .quick-stack .w-layout-cell:first-child .button-3:hover {
+      border-color: #d6ffad !important;
+      color: #d6ffad !important;
+      box-shadow: 0 0 20px rgba(194, 255, 126, 0.5) !important;
+      background-color: rgba(194, 255, 126, 0.05) !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Secondary pills hover glow effect */
+    .quick-stack .w-layout-cell:not(:first-child) .button-3:hover {
+      border-color: rgba(255, 255, 255, 0.85) !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.15) !important;
+      background-color: rgba(255, 255, 255, 0.05) !important;
+      transform: translateY(-2px) !important;
+    }
   </style>
 </head>
 
@@ -412,7 +512,7 @@
         <div class="page-nav">
           <div class="in-page-link-wrap">
             <div class="in-page-dot"></div>
-            <a href="#pharmaceuticals" class="in-page-link">Brand Stratergy</a>
+            <a href="#pharmaceuticals" class="in-page-link">Brand Strategy</a>
           </div>
           <div class="in-page-link-wrap">
             <div class="in-page-dot"></div>
@@ -483,14 +583,14 @@
               <div class="dot-nav w-slider-nav"></div>
             </div>
             <div class="industry-detail-card">
-              <div class="heading-h3">Brand Stratergy</div>
+              <div class="heading-h3">Brand Strategy</div>
               <div class="heading-h5 industry-text">A brand should give the business more than visibility. It should
                 give leadership a clear position, teams a shared language, and the market a stronger reason to choose.
               </div>
               <div id="w-node-a20ee242-96ca-12a4-d809-c69f1e591e66-ed5471a8"
                 class="w-layout-layout quick-stack wf-layout-layout">
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Stratergy</a>
+                  <a href="#" class="button-3 w-button">Brand Strategy</a>
                 </div>
                 <div class="w-layout-cell">
                   <a href="#" class="button-3 w-button">Brand Positioning</a>
@@ -537,31 +637,34 @@
               <div id="w-node-_552c76aa-dd46-d8d2-282c-f2552c416e3e-ed5471a8"
                 class="w-layout-layout quick-stack wf-layout-layout">
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Stratergy</a>
+                  <a href="#" class="button-3 w-button">Paid Social</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Positioning</a>
+                  <a href="#" class="button-3 w-button">Paid Search</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Messaging</a>
+                  <a href="#" class="button-3 w-button">Programmatic</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Verbal Identity</a>
+                  <a href="#" class="button-3 w-button">SEO</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Visual Identity</a>
+                  <a href="#" class="button-3 w-button">AEO</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Campaigns</a>
+                  <a href="#" class="button-3 w-button">Marketing Analytics</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Culture</a>
+                  <a href="#" class="button-3 w-button">CRO</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Nomenclature</a>
+                  <a href="#" class="button-3 w-button">Landing Pages</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Architecture</a>
+                  <a href="#" class="button-3 w-button">Performance Creatives</a>
+                </div>
+                <div class="w-layout-cell">
+                  <a href="#" class="button-3 w-button">A/B Test</a>
                 </div>
               </div>
               <div class="heading-h5 industry-text">‍<strong>Turn attention into demand the business can measure and
@@ -687,31 +790,31 @@
               <div id="w-node-_826e54bd-5f95-a18c-63cd-e6d243a0cbea-ed5471a8"
                 class="w-layout-layout quick-stack wf-layout-layout">
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Stratergy</a>
+                  <a href="#" class="button-3 w-button">Web Development</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Positioning</a>
+                  <a href="#" class="button-3 w-button">Website Analysis & Audit</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Messaging</a>
+                  <a href="#" class="button-3 w-button">UX/UI Design</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Verbal Identity</a>
+                  <a href="#" class="button-3 w-button">Information Architecture</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Visual Identity</a>
+                  <a href="#" class="button-3 w-button">CMS Development</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Campaigns</a>
+                  <a href="#" class="button-3 w-button">Portals</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Culture</a>
+                  <a href="#" class="button-3 w-button">Booking Flows</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Nomenclature</a>
+                  <a href="#" class="button-3 w-button">Technical Integrations</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Architecture</a>
+                  <a href="#" class="button-3 w-button">Digital Experience Audits</a>
                 </div>
               </div>
               <div class="heading-h5 industry-text"><strong>Build digital journeys that convert interest into
@@ -731,31 +834,25 @@
               <div id="w-node-_4acddb26-637c-5067-c334-3edf701e4385-ed5471a8"
                 class="w-layout-layout quick-stack wf-layout-layout">
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Stratergy</a>
+                  <a href="#" class="button-3 w-button">Data Foundation</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Positioning</a>
+                  <a href="#" class="button-3 w-button">Executive Dashboards</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Messaging</a>
+                  <a href="#" class="button-3 w-button">Marketing Intelligence</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Verbal Identity</a>
+                  <a href="#" class="button-3 w-button">Growth Compass</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Visual Identity</a>
+                  <a href="#" class="button-3 w-button">Decision-Ready Reporting</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Campaigns</a>
+                  <a href="#" class="button-3 w-button">KPI Structures</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Culture</a>
-                </div>
-                <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Nomenclature</a>
-                </div>
-                <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button">Brand Architecture</a>
+                  <a href="#" class="button-3 w-button">Performance Analysis</a>
                 </div>
               </div>
               <div class="heading-h5 industry-text"><strong>Move from scattered reporting to clearer business
