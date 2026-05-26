@@ -131,6 +131,25 @@
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.15) !important;
       transform: translateY(-2px) !important;
     }
+
+    /* Accordion Custom Interactive Logic */
+    .accordion-item-content-wrap {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .accordion-item.is-active .accordion-item-content-wrap {
+      max-height: 500px;
+    }
+
+    .accordion-item .accordion-icon {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .accordion-item.is-active .accordion-icon {
+      transform: rotate(180deg) !important;
+    }
   </style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -519,7 +538,94 @@
       })();
     </script>
   </section>
-
+  <section class="section bottom-padding-l">
+    <div class="main-container">
+      <div class="container---l align-center">
+        <div data-w-id="3d6280a2-38aa-3758-1e04-8e59e12fdd06" class="section-contents scroll-reveal">
+          <div class="heading-h2">Frequently Asked Questions</div>
+          <div class="accordion-wrap">
+            <div class="accordion-item">
+              <div class="accordion-title">
+                <div class="accordion-title-text">What kind of companies do you consult for?</div><img
+                  src="images/icon-interface-arrow-down.svg" alt="Down arrow icon" class="accordion-icon">
+              </div>
+              <div class="accordion-item-content-wrap">
+                <div class="accordion-content">
+                  <div class="accordion-text">We primarily consult for mid-market to enterprise companies, technology startups, and established brands seeking to accelerate their growth. Our clients span B2B SaaS, healthcare tech, fintech, biotech, and premium scientific industries that require strategic positioning and scalable growth marketing engines.</div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-title">
+                <div class="accordion-title-text">Can you work with in-house R&amp;D teams?</div><img
+                  src="images/icon-interface-arrow-down.svg" alt="Down arrow icon" class="accordion-icon">
+              </div>
+              <div class="accordion-item-content-wrap">
+                <div class="accordion-content">
+                  <div class="accordion-text">Absolutely. In fact, many of our most successful projects are built on close collaboration with internal R&amp;D, data science, product, or innovation units. We integrate seamlessly into your current stack and workflows, offering fresh perspectives and executive guidance while respecting existing organizational knowledge.</div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-title">
+                <div class="accordion-title-text">Are your solutions off-the-shelf or built from scratch?</div><img
+                  src="images/icon-interface-arrow-down.svg" alt="Down arrow icon" class="accordion-icon">
+              </div>
+              <div class="accordion-item-content-wrap">
+                <div class="accordion-content">
+                  <div class="accordion-text">Everything we build is completely custom-tailored to your unique business model, market dynamics, and growth goals. We do not believe in cookie-cutter templates. From brand architectures to high-converting web applications and executive data dashboards, every asset is designed and built from scratch.</div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-title">
+                <div class="accordion-title-text">How does the consultancy process start?</div><img
+                  src="images/icon-interface-arrow-down.svg" alt="Down arrow icon" class="accordion-icon">
+              </div>
+              <div class="accordion-item-content-wrap">
+                <div class="accordion-content">
+                  <div class="accordion-text">Our process begins with an in-depth alignment call to understand your current systems, growth bottlenecks, and business objectives. We then conduct a thorough diagnostic audit of your brand, marketing channels, and data infrastructure before presenting a customized strategic roadmap.</div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-title">
+                <div class="accordion-title-text">Do you offer custom strategy development?</div><img
+                  src="images/icon-interface-arrow-down.svg" alt="Down arrow icon" class="accordion-icon">
+              </div>
+              <div class="accordion-item-content-wrap">
+                <div class="accordion-content">
+                  <div class="accordion-text">Yes, custom strategy development is the cornerstone of our full-stack consulting model. We build comprehensive, data-driven strategies for brand positioning, market penetration, growth marketing, digital experience architectures, and operational business intelligence.</div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-title">
+                <div class="accordion-title-text">Do you specialize in any particular areas?</div><img
+                  src="images/icon-interface-arrow-down.svg" alt="Down arrow icon" class="accordion-icon">
+              </div>
+              <div class="accordion-item-content-wrap">
+                <div class="accordion-content">
+                  <div class="accordion-text">We specialize in four key pillars: Brand Strategy (positioning and identity), Growth Marketing (acquisition and conversion), Digital Experience (high-performing web design and development), and Data Intelligence (dashboards, KPI tracking, and custom business intelligence architectures).</div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-title">
+                <div class="accordion-title-text">Do you provide ongoing support after delivery?</div><img
+                  src="images/icon-interface-arrow-down.svg" alt="Down arrow icon" class="accordion-icon">
+              </div>
+              <div class="accordion-item-content-wrap">
+                <div class="accordion-content">
+                  <div class="accordion-text">Yes, we offer both project-based (Finite) engagements and ongoing retained partnerships (Infinite). Under our retained partnerships, we provide continuous optimization, performance monitoring, website maintenance, SEO/AEO management, and strategic marketing updates to scale with your evolving priorities.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section data-w-id="59826b22-f114-a1d5-18e0-be230fcbed71" class="section wide-section">
     <div data-w-id="59826b22-f114-a1d5-18e0-be230fcbed72" class="wide-section-content cta">
       <div class="wide-cta-blob-wrapper-a">
@@ -665,6 +771,28 @@
 
       scrollRevealElements.forEach(el => {
         observer.observe(el);
+      });
+
+      // FAQ Accordion Toggle Logic
+      const accordionTitles = document.querySelectorAll('.accordion-title');
+      accordionTitles.forEach(title => {
+        title.addEventListener('click', () => {
+          const item = title.parentElement;
+          const isActive = item.classList.contains('is-active');
+          
+          // Close other accordion items for premium accordion feel
+          document.querySelectorAll('.accordion-item').forEach(otherItem => {
+            otherItem.classList.remove('is-active');
+            const wrap = otherItem.querySelector('.accordion-item-content-wrap');
+            if (wrap) wrap.style.maxHeight = '0px';
+          });
+
+          if (!isActive) {
+            item.classList.add('is-active');
+            const wrap = item.querySelector('.accordion-item-content-wrap');
+            if (wrap) wrap.style.maxHeight = wrap.scrollHeight + 'px';
+          }
+        });
       });
     })();
   </script>
