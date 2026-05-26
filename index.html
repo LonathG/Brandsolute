@@ -329,6 +329,91 @@
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
     }
+
+    /* Premium Contact Form Styles */
+    .form-input {
+      background-color: #141414 !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 8px !important;
+      color: #ffffff !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .form-input:focus {
+      border-color: rgba(255, 255, 255, 0.4) !important;
+      background-color: #1a1a1a !important;
+    }
+
+    .form-input::placeholder {
+      color: rgba(255, 255, 255, 0.45) !important;
+    }
+
+    /* Dropdown field overrides */
+    .select-input {
+      width: 100% !important;
+      background-color: transparent !important;
+      border: none !important;
+      color: rgba(255, 255, 255, 0.45) !important;
+      appearance: none !important;
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      padding-right: 40px !important;
+      outline: none !important;
+      cursor: pointer !important;
+    }
+
+    .select-input option {
+      background-color: #141414 !important;
+      color: #ffffff !important;
+    }
+
+    .select-arrow {
+      background-color: transparent !important;
+      right: 18px !important;
+      pointer-events: none !important;
+    }
+
+    /* Custom checkbox styling */
+    .w-checkbox-input--inputType-custom {
+      background-color: #141414 !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 4px !important;
+      width: 18px !important;
+      height: 18px !important;
+      margin-top: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .w-checkbox-input--inputType-custom.w--redirected-checked {
+      background-color: #c2ff7e !important;
+      border-color: #c2ff7e !important;
+    }
+
+    /* Pill-shaped Send Message button */
+    .form .button[type="submit"] {
+      background-color: #333333 !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 100px !important;
+      color: #ffffff !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 1px !important;
+      padding: 12px 32px !important;
+      height: auto !important;
+      width: fit-content !important;
+      transition: all 0.25s ease !important;
+      cursor: pointer !important;
+    }
+
+    .form .button[type="submit"]:hover {
+      background-color: #444444 !important;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.15) !important;
+      transform: translateY(-2px) !important;
+    }
   </style>
 </head>
 
@@ -381,7 +466,7 @@
                       </nav>
                     </div> -->
                     <a href="blog.html" class="nav-link w-nav-link">Blogs</a>
-                    <a href="#" class="nav-link w-nav-link">Get In Touch</a>
+                    <a href="contact.html" class="nav-link w-nav-link">Get In Touch</a>
                     <div class="nav-button-wrapper">
                       <a rel="nofollow" data-wf--button--variant="base" href="https://mmra.re/purchasescion"
                         target="_blank" class="button w-inline-block">
@@ -1256,27 +1341,61 @@
         style="-webkit-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
         class="vertical-section tight">
         <div class="heading-h2"><strong>Insights &amp; News</strong></div>
-        <div class="w-dyn-list">
-          <div role="list" class="blog-grid w-dyn-items">
-            <div role="listitem" class="w-dyn-item">
-              <a href="#" class="blog-card w-inline-block">
-                <div class="zoom-image-link blog-image"><img src="images/blog-01.webp" alt=""
-                    class="zoom-image w-dyn-bind-empty"></div>
-                <div class="blog-card-body">
-                  <div class="heading-h5 w-dyn-bind-empty"></div>
-                  <div class="blog-card-meta">
-                    <div data-wf--badge-title--variant="base" class="badge-title">
-                      <div class="square"></div>
-                      <div class="badge-text"></div>
-                    </div>
-                    <div class="badge-text muted w-dyn-bind-empty"></div>
+        <div class="main-container">
+          <div class="w-dyn-list">
+            <div role="list" class="blog-grid w-dyn-items">
+              <div role="listitem" class="w-dyn-item">
+                <a href="detail_blog-posts.html" class="blog-card w-inline-block">
+                  <div class="zoom-image-link blog-image"><img src="images/customer-03.webp" alt="" class="zoom-image">
                   </div>
-                </div>
-              </a>
+                  <div class="blog-card-body">
+                    <div class="heading-h5">How data is rewriting the future of human capability</div>
+                    <div class="blog-card-meta">
+                      <div data-wf--badge-title--variant="base" class="badge-title">
+                        <div class="square"></div>
+                        <div class="badge-text">INSIGHT</div>
+                      </div>
+                      <div class="badge-text muted">27.03.25</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div role="listitem" class="w-dyn-item">
+                <a href="detail_blog-posts.html" class="blog-card w-inline-block">
+                  <div class="zoom-image-link blog-image"><img src="images/blog-02.webp" alt="" class="zoom-image">
+                  </div>
+                  <div class="blog-card-body">
+                    <div class="heading-h5">The next frontier in decoding complex life systems</div>
+                    <div class="blog-card-meta">
+                      <div data-wf--badge-title--variant="base" class="badge-title">
+                        <div class="square"></div>
+                        <div class="badge-text">INSIGHT</div>
+                      </div>
+                      <div class="badge-text muted">08.03.25</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div role="listitem" class="w-dyn-item">
+                <a href="detail_blog-posts.html" class="blog-card w-inline-block">
+                  <div class="zoom-image-link blog-image"><img src="images/landscape-02.webp" alt="" class="zoom-image">
+                  </div>
+                  <div class="blog-card-body">
+                    <div class="heading-h5">Designing machines that understand biology</div>
+                    <div class="blog-card-meta">
+                      <div data-wf--badge-title--variant="base" class="badge-title">
+                        <div class="square"></div>
+                        <div class="badge-text">NEWS</div>
+                      </div>
+                      <div class="badge-text muted">21.03.25</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="empty-state w-dyn-empty">
-            <div>No items found.</div>
+            <!-- <div class="empty-state w-dyn-empty">
+          <div>No items found.</div>
+        </div> -->
           </div>
         </div>
         <div class="follow-on-link-wrap">
@@ -1297,9 +1416,9 @@
             <div class="badge-text">Contact</div>
           </div>
           <div class="heading-h2">We want to hear from you!</div>
-          <div class="heading-h5 body-text">Whether you are looking to sharpen your brand, work through a growth
-            roadblock, improve a digital journey, or get clearer visibility across the business, we are ready to talk.
-            Tell us what you are trying to solve.</div>
+          <div class="heading-h5 body-text">Whether you're looking to upgrade your brand, navigating complex roadblocks,
+            planning your next phase of growth, or just have questions; we're ready to talk. Let us know how we can
+            help.</div>
         </div>
         <div data-w-id="28846722-0a1e-8c00-a660-85f0db0276d2"
           style="-webkit-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
@@ -1308,26 +1427,33 @@
             <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form"
               data-wf-page-id="6a100c7eee38aa18ed5471a4" data-wf-element-id="28846722-0a1e-8c00-a660-85f0db0276d9">
               <input class="form-input w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Your name"
-                type="text" id="name-2"><input class="form-input w-input" maxlength="256" name="Email-2"
-                data-name="Email 2" placeholder="Email Address" type="email" id="Email-2"><input
-                class="form-input w-input" maxlength="256" name="Company-2" data-name="Company 2" placeholder="Company"
-                type="text" id="Company-2"><textarea placeholder="Message" maxlength="5000" id="Message-3"
+                type="text" id="name-2">
+              <input class="form-input w-input" maxlength="256" name="Email-2" data-name="Email 2"
+                placeholder="Email Address" type="email" id="Email-2">
+              <div class="form-input select-wrap">
+                <select id="field-2" name="field-2" data-name="Field 2" class="select-input w-select">
+                  <option value="">I'm interested in the following services</option>
+                  <option value="Brand Strategy">Brand Strategy</option>
+                  <option value="Growth Marketing">Growth Marketing</option>
+                  <option value="Digital Experience">Digital Experience</option>
+                  <option value="Data Intelligence">Data Intelligence</option>
+                </select>
+                <img src="images/icon-interface-arrow-down.svg" alt="Down arrow icon" class="select-arrow">
+              </div>
+              <input class="form-input w-input" maxlength="256" name="Company-2" data-name="Company 2"
+                placeholder="Company" type="text" id="Company-2">
+              <textarea placeholder="Tell us a bit about what we can do for you?" maxlength="5000" id="Message-3"
                 name="Message" data-name="Message" class="form-input text-area w-input"></textarea>
-              <div class="form-input select-wrap"><select id="field-2" name="field-2" data-name="Field 2"
-                  class="select-input w-select">
-                  <option value="">How did you hear about us?</option>
-                  <option value="First">First choice</option>
-                  <option value="Second">Second choice</option>
-                  <option value="Third">Third choice</option>
-                </select><img src="images/icon-interface-arrow-down.svg" alt="Down arrow icon" class="select-arrow">
-              </div><label class="w-checkbox checkbox-field">
-                <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div><input type="checkbox"
-                  id="checkbox-2" name="checkbox-2" data-name="Checkbox 2"
-                  style="opacity:0;position:absolute;z-index:-1"><span class="checkbox-label w-form-label"
-                  for="checkbox-2"><span class="body-text">I have read and agree to the</span>
+              <label class="w-checkbox checkbox-field">
+                <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
+                <input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2"
+                  style="opacity:0;position:absolute;z-index:-1">
+                <span class="checkbox-label w-form-label" for="checkbox-2">
+                  <span class="body-text">I have read and agree to the</span>
                   <a href="legal.html">Terms</a>
                 </span>
-              </label><input type="submit" data-wait="Please wait..." class="button left w-button" value="Send Message">
+              </label>
+              <input type="submit" data-wait="Please wait..." class="button left w-button" value="SEND MESSAGE">
             </form>
             <div class="form-success w-form-done">
               <div>Thank you! Your submission has been received!</div>
