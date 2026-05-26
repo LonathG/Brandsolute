@@ -140,7 +140,7 @@
     }
     
     .accordion-item.is-active .accordion-item-content-wrap {
-      max-height: 500px;
+      max-height: 500px !important;
     }
 
     .accordion-item .accordion-icon {
@@ -783,14 +783,10 @@
           // Close other accordion items for premium accordion feel
           document.querySelectorAll('.accordion-item').forEach(otherItem => {
             otherItem.classList.remove('is-active');
-            const wrap = otherItem.querySelector('.accordion-item-content-wrap');
-            if (wrap) wrap.style.maxHeight = '0px';
           });
 
           if (!isActive) {
             item.classList.add('is-active');
-            const wrap = item.querySelector('.accordion-item-content-wrap');
-            if (wrap) wrap.style.maxHeight = wrap.scrollHeight + 'px';
           }
         });
       });
