@@ -425,6 +425,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .globe-container canvas {
       display: block;
       width: 100% !important;
@@ -436,6 +437,7 @@
         max-height: 420px;
       }
     }
+
     @media (max-width: 767px) {
       .globe-container {
         max-height: 350px;
@@ -625,10 +627,17 @@
             <div class="marquee">
               <div class="marquee-scrim"></div>
               <div class="marquee-group">
-                <div class="logo-marquee-row"><img src="images/logo-gridpoint.svg" alt="" class="logo-marquee-item"><img
-                    src="images/logo-eisnersterling.svg" alt="" class="logo-marquee-item"><img
-                    src="images/logo-contiuumai.svg" alt="" class="logo-marquee-item"><img src="images/logo-monkey.svg"
-                    alt="" class="logo-marquee-item"><img src="images/logo-givonni.svg" alt=""
+                <div class="logo-marquee-row"><img src="images/Brandsolute Client Logos/MAS.png" alt=""
+                    class="logo-marquee-item"><img src="images/Brandsolute Client Logos/Unilever.png" alt=""
+                    class="logo-marquee-item"><img src="images/Brandsolute Client Logos/webxpay.png" alt=""
+                    class="logo-marquee-item"><img src="images/Brandsolute Client Logos/intermarc.png" alt=""
+                    class="logo-marquee-item"><img src="images/Brandsolute Client Logos/NM-White-Logo 1.png" alt=""
+                    class="logo-marquee-item"><img src="images/Brandsolute Client Logos/Browns hotels.png" alt=""
+                    class="logo-marquee-item"><img
+                    src="images/Brandsolute Client Logos/Thema Collection -Negative with colour fill - logo - Horizontal 1.png"
+                    alt="" class="logo-marquee-item"><img src="images/Brandsolute Client Logos/findmyfare.png" alt=""
+                    class="logo-marquee-item"><img src="images/Brandsolute Client Logos/Reveal.png" alt=""
+                    class="logo-marquee-item"><img src="images/Brandsolute Client Logos/Hyperion.png" alt=""
                     class="logo-marquee-item"></div>
               </div>
               <div class="marquee-group">
@@ -1620,307 +1629,307 @@
   <!-- Three.js Globe Animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
-  (function() {
-    'use strict';
+    (function () {
+      'use strict';
 
-    var container = document.getElementById('globe-container');
-    var canvas = document.getElementById('globe-canvas');
-    if (!container || !canvas) return;
+      var container = document.getElementById('globe-container');
+      var canvas = document.getElementById('globe-canvas');
+      if (!container || !canvas) return;
 
-    var ACCENT = 0xE6FFA9;
-    var ACCENT_CSS = '#E6FFA9';
-    var DOT_COLOR = 0xFFFFFF;
-    var BG = 0x141414;
-    var GLOBE_RADIUS = 2.0;
+      var ACCENT = 0xE6FFA9;
+      var ACCENT_CSS = '#E6FFA9';
+      var DOT_COLOR = 0xFFFFFF;
+      var BG = 0x141414;
+      var GLOBE_RADIUS = 2.0;
 
-    // --- World landmass coordinates (lat, lon) for dot placement ---
-    var landCoords = [
-      // North America
-      [60,-140],[55,-130],[50,-125],[48,-123],[55,-120],[50,-115],[52,-110],[48,-105],[45,-110],[40,-105],
-      [42,-100],[45,-95],[43,-90],[42,-85],[44,-80],[41,-75],[40,-74],[43,-70],[45,-65],[47,-60],
-      [50,-65],[55,-60],[35,-120],[34,-118],[37,-122],[33,-112],[32,-110],[30,-100],[30,-95],[30,-90],
-      [33,-85],[35,-80],[37,-76],[39,-77],[25,-80],[28,-82],[30,-85],[27,-82],[25,-100],[22,-100],
-      [20,-100],[20,-105],[19,-99],[17,-97],[15,-92],[14,-90],[10,-84],[9,-79],[65,-170],[64,-165],
-      [62,-150],[60,-145],[58,-135],[70,-160],[68,-140],[66,-130],[72,-155],[63,-140],[57,-130],
+      // --- World landmass coordinates (lat, lon) for dot placement ---
+      var landCoords = [
+        // North America
+        [60, -140], [55, -130], [50, -125], [48, -123], [55, -120], [50, -115], [52, -110], [48, -105], [45, -110], [40, -105],
+        [42, -100], [45, -95], [43, -90], [42, -85], [44, -80], [41, -75], [40, -74], [43, -70], [45, -65], [47, -60],
+        [50, -65], [55, -60], [35, -120], [34, -118], [37, -122], [33, -112], [32, -110], [30, -100], [30, -95], [30, -90],
+        [33, -85], [35, -80], [37, -76], [39, -77], [25, -80], [28, -82], [30, -85], [27, -82], [25, -100], [22, -100],
+        [20, -100], [20, -105], [19, -99], [17, -97], [15, -92], [14, -90], [10, -84], [9, -79], [65, -170], [64, -165],
+        [62, -150], [60, -145], [58, -135], [70, -160], [68, -140], [66, -130], [72, -155], [63, -140], [57, -130],
 
-      // South America
-      [10,-70],[8,-63],[5,-55],[0,-50],[-3,-60],[-5,-50],[-8,-40],[-10,-50],[-12,-77],[-15,-75],
-      [-15,-50],[-20,-45],[-22,-48],[-23,-43],[-25,-50],[-28,-55],[-30,-52],[-33,-58],[-35,-60],
-      [-38,-62],[-40,-65],[-42,-68],[-45,-70],[-48,-72],[-50,-73],[-52,-70],[-54,-68],[4,-74],
-      [7,-72],[5,-75],[-1,-78],[-5,-80],[-10,-76],[-16,-70],[-20,-65],[-25,-60],[-30,-55],
+        // South America
+        [10, -70], [8, -63], [5, -55], [0, -50], [-3, -60], [-5, -50], [-8, -40], [-10, -50], [-12, -77], [-15, -75],
+        [-15, -50], [-20, -45], [-22, -48], [-23, -43], [-25, -50], [-28, -55], [-30, -52], [-33, -58], [-35, -60],
+        [-38, -62], [-40, -65], [-42, -68], [-45, -70], [-48, -72], [-50, -73], [-52, -70], [-54, -68], [4, -74],
+        [7, -72], [5, -75], [-1, -78], [-5, -80], [-10, -76], [-16, -70], [-20, -65], [-25, -60], [-30, -55],
 
-      // Europe
-      [60,25],[58,15],[56,10],[55,12],[54,10],[52,13],[52,5],[51,0],[50,3],[48,2],[47,8],[46,12],
-      [43,12],[42,3],[40,-4],[38,-9],[37,-6],[36,-5],[40,0],[42,12],[44,12],[46,6],[48,7],[50,14],
-      [52,21],[54,18],[56,24],[58,25],[60,30],[62,25],[65,25],[68,20],[70,25],[72,28],[60,10],
-      [63,10],[65,14],[68,16],[55,37],[52,30],[50,36],[48,35],[45,20],[43,25],[42,24],[40,20],
-      [38,24],[37,28],[35,25],[44,26],[46,15],[48,17],[50,20],[55,49],[58,50],[60,40],[62,40],
+        // Europe
+        [60, 25], [58, 15], [56, 10], [55, 12], [54, 10], [52, 13], [52, 5], [51, 0], [50, 3], [48, 2], [47, 8], [46, 12],
+        [43, 12], [42, 3], [40, -4], [38, -9], [37, -6], [36, -5], [40, 0], [42, 12], [44, 12], [46, 6], [48, 7], [50, 14],
+        [52, 21], [54, 18], [56, 24], [58, 25], [60, 30], [62, 25], [65, 25], [68, 20], [70, 25], [72, 28], [60, 10],
+        [63, 10], [65, 14], [68, 16], [55, 37], [52, 30], [50, 36], [48, 35], [45, 20], [43, 25], [42, 24], [40, 20],
+        [38, 24], [37, 28], [35, 25], [44, 26], [46, 15], [48, 17], [50, 20], [55, 49], [58, 50], [60, 40], [62, 40],
 
-      // Africa
-      [35,0],[33,-7],[30,-10],[28,0],[25,-13],[20,-17],[15,-17],[10,-14],[5,-5],[5,0],[0,10],
-      [-2,30],[-5,35],[-8,32],[-10,34],[-15,35],[-20,35],[-25,30],[-28,28],[-30,25],[-33,25],
-      [-34,18],[10,40],[12,45],[5,40],[0,38],[-5,40],[-10,40],[-15,40],[-20,45],[-25,45],
-      [15,35],[10,10],[7,5],[5,10],[0,25],[-5,15],[-10,20],[-15,25],[-20,30],[30,10],[28,30],
-      [25,33],[20,30],[15,30],[10,35],[25,45],[20,40],[15,40],[10,45],[5,45],[-12,25],[-8,15],
+        // Africa
+        [35, 0], [33, -7], [30, -10], [28, 0], [25, -13], [20, -17], [15, -17], [10, -14], [5, -5], [5, 0], [0, 10],
+        [-2, 30], [-5, 35], [-8, 32], [-10, 34], [-15, 35], [-20, 35], [-25, 30], [-28, 28], [-30, 25], [-33, 25],
+        [-34, 18], [10, 40], [12, 45], [5, 40], [0, 38], [-5, 40], [-10, 40], [-15, 40], [-20, 45], [-25, 45],
+        [15, 35], [10, 10], [7, 5], [5, 10], [0, 25], [-5, 15], [-10, 20], [-15, 25], [-20, 30], [30, 10], [28, 30],
+        [25, 33], [20, 30], [15, 30], [10, 35], [25, 45], [20, 40], [15, 40], [10, 45], [5, 45], [-12, 25], [-8, 15],
 
-      // Asia
-      [55,70],[55,80],[55,90],[50,60],[50,70],[50,80],[50,90],[45,60],[45,70],[45,80],[45,90],
-      [40,45],[40,55],[40,65],[40,70],[40,75],[40,80],[35,45],[35,55],[35,70],[35,75],[35,105],
-      [35,110],[35,115],[35,120],[35,130],[35,135],[35,140],[30,50],[30,70],[30,80],[30,100],
-      [30,105],[30,110],[30,120],[25,55],[25,70],[25,80],[25,100],[25,105],[25,110],[25,120],
-      [20,75],[20,80],[20,100],[20,105],[20,110],[15,75],[15,100],[15,105],[15,108],[15,120],
-      [10,77],[10,80],[10,100],[10,105],[10,125],[5,80],[5,100],[5,105],[5,115],[0,105],[0,110],
-      [-5,105],[-5,115],[-8,110],[-8,115],[-8,120],[60,65],[60,75],[60,90],[60,100],[60,110],
-      [60,120],[60,130],[60,140],[60,150],[60,160],[65,70],[65,90],[65,130],[65,160],[65,170],
-      [70,70],[70,100],[70,130],[70,150],[55,130],[55,140],[55,155],[50,130],[50,140],[48,135],
-      [45,130],[45,140],[43,132],[40,127],[37,127],[35,127],[42,45],[38,45],[35,51],[32,35],
-      [30,35],[25,50],[20,42],[15,45],[12,43],[45,50],[42,59],[40,50],[28,48],[24,47],[22,40],
+        // Asia
+        [55, 70], [55, 80], [55, 90], [50, 60], [50, 70], [50, 80], [50, 90], [45, 60], [45, 70], [45, 80], [45, 90],
+        [40, 45], [40, 55], [40, 65], [40, 70], [40, 75], [40, 80], [35, 45], [35, 55], [35, 70], [35, 75], [35, 105],
+        [35, 110], [35, 115], [35, 120], [35, 130], [35, 135], [35, 140], [30, 50], [30, 70], [30, 80], [30, 100],
+        [30, 105], [30, 110], [30, 120], [25, 55], [25, 70], [25, 80], [25, 100], [25, 105], [25, 110], [25, 120],
+        [20, 75], [20, 80], [20, 100], [20, 105], [20, 110], [15, 75], [15, 100], [15, 105], [15, 108], [15, 120],
+        [10, 77], [10, 80], [10, 100], [10, 105], [10, 125], [5, 80], [5, 100], [5, 105], [5, 115], [0, 105], [0, 110],
+        [-5, 105], [-5, 115], [-8, 110], [-8, 115], [-8, 120], [60, 65], [60, 75], [60, 90], [60, 100], [60, 110],
+        [60, 120], [60, 130], [60, 140], [60, 150], [60, 160], [65, 70], [65, 90], [65, 130], [65, 160], [65, 170],
+        [70, 70], [70, 100], [70, 130], [70, 150], [55, 130], [55, 140], [55, 155], [50, 130], [50, 140], [48, 135],
+        [45, 130], [45, 140], [43, 132], [40, 127], [37, 127], [35, 127], [42, 45], [38, 45], [35, 51], [32, 35],
+        [30, 35], [25, 50], [20, 42], [15, 45], [12, 43], [45, 50], [42, 59], [40, 50], [28, 48], [24, 47], [22, 40],
 
-      // Oceania / Australia
-      [-15,130],[-18,125],[-20,120],[-22,115],[-25,115],[-28,115],[-30,115],[-32,116],[-33,120],
-      [-35,117],[-35,140],[-33,150],[-30,153],[-28,150],[-25,150],[-22,148],[-20,145],[-18,140],
-      [-15,145],[-12,135],[-10,143],[-20,135],[-25,135],[-28,135],[-30,135],[-25,130],[-25,140],
-      [-38,145],[-37,150],[-42,147],[-45,168],[-40,175],[-37,175],[-35,174],[-6,145],[-5,150],
-      [-8,148],[-18,178],[-15,167],[-10,160],[-12,150],
-    ];
+        // Oceania / Australia
+        [-15, 130], [-18, 125], [-20, 120], [-22, 115], [-25, 115], [-28, 115], [-30, 115], [-32, 116], [-33, 120],
+        [-35, 117], [-35, 140], [-33, 150], [-30, 153], [-28, 150], [-25, 150], [-22, 148], [-20, 145], [-18, 140],
+        [-15, 145], [-12, 135], [-10, 143], [-20, 135], [-25, 135], [-28, 135], [-30, 135], [-25, 130], [-25, 140],
+        [-38, 145], [-37, 150], [-42, 147], [-45, 168], [-40, 175], [-37, 175], [-35, 174], [-6, 145], [-5, 150],
+        [-8, 148], [-18, 178], [-15, 167], [-10, 160], [-12, 150],
+      ];
 
-    // --- Cities for arc connections ---
-    var cities = [
-      { lat: 40.7, lon: -74, name: 'New York' },
-      { lat: 51.5, lon: 0, name: 'London' },
-      { lat: 35.7, lon: 140, name: 'Tokyo' },
-      { lat: -33.9, lon: 18.4, name: 'Cape Town' },
-      { lat: 19, lon: 72.8, name: 'Mumbai' },
-      { lat: -23.5, lon: -46.6, name: 'São Paulo' },
-      { lat: 1.3, lon: 103.8, name: 'Singapore' },
-      { lat: 55.75, lon: 37.6, name: 'Moscow' },
-      { lat: -33.8, lon: 151, name: 'Sydney' },
-      { lat: 25, lon: 55, name: 'Dubai' },
-    ];
+      // --- Cities for arc connections ---
+      var cities = [
+        { lat: 40.7, lon: -74, name: 'New York' },
+        { lat: 51.5, lon: 0, name: 'London' },
+        { lat: 35.7, lon: 140, name: 'Tokyo' },
+        { lat: -33.9, lon: 18.4, name: 'Cape Town' },
+        { lat: 19, lon: 72.8, name: 'Mumbai' },
+        { lat: -23.5, lon: -46.6, name: 'São Paulo' },
+        { lat: 1.3, lon: 103.8, name: 'Singapore' },
+        { lat: 55.75, lon: 37.6, name: 'Moscow' },
+        { lat: -33.8, lon: 151, name: 'Sydney' },
+        { lat: 25, lon: 55, name: 'Dubai' },
+      ];
 
-    var connections = [
-      [0,1],[1,2],[0,5],[3,1],[4,1],[4,6],[2,6],[6,8],[7,1],[4,9],[9,1],[0,2],[3,4],[5,3],
-    ];
+      var connections = [
+        [0, 1], [1, 2], [0, 5], [3, 1], [4, 1], [4, 6], [2, 6], [6, 8], [7, 1], [4, 9], [9, 1], [0, 2], [3, 4], [5, 3],
+      ];
 
-    // --- Helpers ---
-    function latLonToVec3(lat, lon, radius) {
-      var phi = (90 - lat) * Math.PI / 180;
-      var theta = (lon + 180) * Math.PI / 180;
-      return new THREE.Vector3(
-        -(radius * Math.sin(phi) * Math.cos(theta)),
-        radius * Math.cos(phi),
-        radius * Math.sin(phi) * Math.sin(theta)
-      );
-    }
-
-    function createArc(start, end, radius, segments) {
-      var cb = new THREE.Vector3().crossVectors(start, end).normalize();
-      var angle = start.angleTo(end);
-      var pts = [];
-      for (var i = 0; i <= segments; i++) {
-        var t = i / segments;
-        var a = angle * t;
-        var p = new THREE.Vector3().copy(start).applyAxisAngle(cb, a);
-        var lift = Math.sin(Math.PI * t) * 0.35 * angle;
-        p.normalize().multiplyScalar(radius + lift);
-        pts.push(p);
+      // --- Helpers ---
+      function latLonToVec3(lat, lon, radius) {
+        var phi = (90 - lat) * Math.PI / 180;
+        var theta = (lon + 180) * Math.PI / 180;
+        return new THREE.Vector3(
+          -(radius * Math.sin(phi) * Math.cos(theta)),
+          radius * Math.cos(phi),
+          radius * Math.sin(phi) * Math.sin(theta)
+        );
       }
-      return pts;
-    }
 
-    // --- Scene Setup ---
-    var scene = new THREE.Scene();
+      function createArc(start, end, radius, segments) {
+        var cb = new THREE.Vector3().crossVectors(start, end).normalize();
+        var angle = start.angleTo(end);
+        var pts = [];
+        for (var i = 0; i <= segments; i++) {
+          var t = i / segments;
+          var a = angle * t;
+          var p = new THREE.Vector3().copy(start).applyAxisAngle(cb, a);
+          var lift = Math.sin(Math.PI * t) * 0.35 * angle;
+          p.normalize().multiplyScalar(radius + lift);
+          pts.push(p);
+        }
+        return pts;
+      }
 
-    var aspect = container.clientWidth / container.clientHeight;
-    var camera = new THREE.PerspectiveCamera(45, aspect, 0.1, 100);
-    camera.position.set(0, 0.5, 5.5);
-    camera.lookAt(0, 0, 0);
+      // --- Scene Setup ---
+      var scene = new THREE.Scene();
 
-    var renderer = new THREE.WebGLRenderer({
-      canvas: canvas,
-      antialias: true,
-      alpha: true,
-    });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(BG, 0);
-    renderer.setSize(container.clientWidth, container.clientHeight);
+      var aspect = container.clientWidth / container.clientHeight;
+      var camera = new THREE.PerspectiveCamera(45, aspect, 0.1, 100);
+      camera.position.set(0, 0.5, 5.5);
+      camera.lookAt(0, 0, 0);
 
-    // --- Globe Shell (subtle wireframe) ---
-    var shellGeo = new THREE.SphereGeometry(GLOBE_RADIUS, 48, 48);
-    var shellMat = new THREE.MeshBasicMaterial({
-      color: 0xFFFFFF,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.03,
-    });
-    var shell = new THREE.Mesh(shellGeo, shellMat);
-    scene.add(shell);
-
-    // --- Land Dots ---
-    var dotPositions = [];
-    for (var i = 0; i < landCoords.length; i++) {
-      var v = latLonToVec3(landCoords[i][0], landCoords[i][1], GLOBE_RADIUS);
-      dotPositions.push(v.x, v.y, v.z);
-    }
-
-    var dotGeo = new THREE.BufferGeometry();
-    dotGeo.setAttribute('position', new THREE.Float32BufferAttribute(dotPositions, 3));
-
-    var dotMat = new THREE.PointsMaterial({
-      color: DOT_COLOR,
-      size: 0.035,
-      sizeAttenuation: true,
-      transparent: true,
-      opacity: 0.6,
-    });
-    var dots = new THREE.Points(dotGeo, dotMat);
-    scene.add(dots);
-
-    // --- City Highlight Dots ---
-    var cityPositions = [];
-    for (var ci = 0; ci < cities.length; ci++) {
-      var cv = latLonToVec3(cities[ci].lat, cities[ci].lon, GLOBE_RADIUS * 1.005);
-      cityPositions.push(cv.x, cv.y, cv.z);
-    }
-    var cityGeo = new THREE.BufferGeometry();
-    cityGeo.setAttribute('position', new THREE.Float32BufferAttribute(cityPositions, 3));
-    var cityMat = new THREE.PointsMaterial({
-      color: ACCENT,
-      size: 0.06,
-      sizeAttenuation: true,
-      transparent: true,
-      opacity: 0.9,
-    });
-    var cityDots = new THREE.Points(cityGeo, cityMat);
-    scene.add(cityDots);
-
-    // --- Arc Connections ---
-    var arcGroup = new THREE.Group();
-    scene.add(arcGroup);
-    for (var ai = 0; ai < connections.length; ai++) {
-      var c = connections[ai];
-      var s = latLonToVec3(cities[c[0]].lat, cities[c[0]].lon, GLOBE_RADIUS);
-      var e = latLonToVec3(cities[c[1]].lat, cities[c[1]].lon, GLOBE_RADIUS);
-      var arcPts = createArc(s, e, GLOBE_RADIUS, 50);
-      var arcGeo = new THREE.BufferGeometry().setFromPoints(arcPts);
-      var arcMat = new THREE.LineBasicMaterial({
-        color: ACCENT,
-        transparent: true,
-        opacity: 0.2,
+      var renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        antialias: true,
+        alpha: true,
       });
-      var arcLine = new THREE.Line(arcGeo, arcMat);
-      arcGroup.add(arcLine);
-    }
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setClearColor(BG, 0);
+      renderer.setSize(container.clientWidth, container.clientHeight);
 
-    // --- Orbital Rings ---
-    var ringGroup = new THREE.Group();
-    scene.add(ringGroup);
-
-    function addRing(radius, tiltX, tiltY, opacity) {
-      var ringGeo = new THREE.RingGeometry(radius - 0.005, radius + 0.005, 128);
-      var ringMat = new THREE.MeshBasicMaterial({
-        color: ACCENT,
-        side: THREE.DoubleSide,
+      // --- Globe Shell (subtle wireframe) ---
+      var shellGeo = new THREE.SphereGeometry(GLOBE_RADIUS, 48, 48);
+      var shellMat = new THREE.MeshBasicMaterial({
+        color: 0xFFFFFF,
+        wireframe: true,
         transparent: true,
-        opacity: opacity,
+        opacity: 0.03,
       });
-      var ring = new THREE.Mesh(ringGeo, ringMat);
-      ring.rotation.x = tiltX;
-      ring.rotation.y = tiltY;
-      ringGroup.add(ring);
-    }
+      var shell = new THREE.Mesh(shellGeo, shellMat);
+      scene.add(shell);
 
-    addRing(GLOBE_RADIUS * 1.35, Math.PI * 0.5, 0.3, 0.15);
-    addRing(GLOBE_RADIUS * 1.55, Math.PI * 0.45, -0.2, 0.1);
-    addRing(GLOBE_RADIUS * 1.15, Math.PI * 0.55, 0.5, 0.08);
+      // --- Land Dots ---
+      var dotPositions = [];
+      for (var i = 0; i < landCoords.length; i++) {
+        var v = latLonToVec3(landCoords[i][0], landCoords[i][1], GLOBE_RADIUS);
+        dotPositions.push(v.x, v.y, v.z);
+      }
 
-    // --- Glow Sprite ---
-    var glowCanvas = document.createElement('canvas');
-    glowCanvas.width = 128;
-    glowCanvas.height = 128;
-    var gCtx = glowCanvas.getContext('2d');
-    var gradient = gCtx.createRadialGradient(64, 64, 0, 64, 64, 64);
-    gradient.addColorStop(0, 'rgba(230,255,169,0.15)');
-    gradient.addColorStop(0.4, 'rgba(230,255,169,0.05)');
-    gradient.addColorStop(1, 'rgba(230,255,169,0)');
-    gCtx.fillStyle = gradient;
-    gCtx.fillRect(0, 0, 128, 128);
-    var glowTexture = new THREE.CanvasTexture(glowCanvas);
-    var glowMat = new THREE.SpriteMaterial({
-      map: glowTexture,
-      transparent: true,
-      opacity: 0.6,
-    });
-    var glow = new THREE.Sprite(glowMat);
-    glow.scale.set(4.5, 4.5, 1);
-    scene.add(glow);
+      var dotGeo = new THREE.BufferGeometry();
+      dotGeo.setAttribute('position', new THREE.Float32BufferAttribute(dotPositions, 3));
 
-    // --- Globe group for rotation ---
-    var globeGroup = new THREE.Group();
-    globeGroup.add(shell);
-    globeGroup.add(dots);
-    globeGroup.add(cityDots);
-    globeGroup.add(arcGroup);
-    scene.add(globeGroup);
+      var dotMat = new THREE.PointsMaterial({
+        color: DOT_COLOR,
+        size: 0.035,
+        sizeAttenuation: true,
+        transparent: true,
+        opacity: 0.6,
+      });
+      var dots = new THREE.Points(dotGeo, dotMat);
+      scene.add(dots);
 
-    // --- Interaction ---
-    var mouseX = 0, mouseY = 0;
-    var targetRotX = 0, targetRotY = 0;
+      // --- City Highlight Dots ---
+      var cityPositions = [];
+      for (var ci = 0; ci < cities.length; ci++) {
+        var cv = latLonToVec3(cities[ci].lat, cities[ci].lon, GLOBE_RADIUS * 1.005);
+        cityPositions.push(cv.x, cv.y, cv.z);
+      }
+      var cityGeo = new THREE.BufferGeometry();
+      cityGeo.setAttribute('position', new THREE.Float32BufferAttribute(cityPositions, 3));
+      var cityMat = new THREE.PointsMaterial({
+        color: ACCENT,
+        size: 0.06,
+        sizeAttenuation: true,
+        transparent: true,
+        opacity: 0.9,
+      });
+      var cityDots = new THREE.Points(cityGeo, cityMat);
+      scene.add(cityDots);
 
-    container.addEventListener('mousemove', function(e) {
-      var rect = container.getBoundingClientRect();
-      mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-      mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-    });
+      // --- Arc Connections ---
+      var arcGroup = new THREE.Group();
+      scene.add(arcGroup);
+      for (var ai = 0; ai < connections.length; ai++) {
+        var c = connections[ai];
+        var s = latLonToVec3(cities[c[0]].lat, cities[c[0]].lon, GLOBE_RADIUS);
+        var e = latLonToVec3(cities[c[1]].lat, cities[c[1]].lon, GLOBE_RADIUS);
+        var arcPts = createArc(s, e, GLOBE_RADIUS, 50);
+        var arcGeo = new THREE.BufferGeometry().setFromPoints(arcPts);
+        var arcMat = new THREE.LineBasicMaterial({
+          color: ACCENT,
+          transparent: true,
+          opacity: 0.2,
+        });
+        var arcLine = new THREE.Line(arcGeo, arcMat);
+        arcGroup.add(arcLine);
+      }
 
-    container.addEventListener('mouseleave', function() {
-      mouseX = 0;
-      mouseY = 0;
-    });
+      // --- Orbital Rings ---
+      var ringGroup = new THREE.Group();
+      scene.add(ringGroup);
 
-    // --- Animation ---
-    var autoRotation = 0;
-    var clock = new THREE.Clock();
+      function addRing(radius, tiltX, tiltY, opacity) {
+        var ringGeo = new THREE.RingGeometry(radius - 0.005, radius + 0.005, 128);
+        var ringMat = new THREE.MeshBasicMaterial({
+          color: ACCENT,
+          side: THREE.DoubleSide,
+          transparent: true,
+          opacity: opacity,
+        });
+        var ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.rotation.x = tiltX;
+        ring.rotation.y = tiltY;
+        ringGroup.add(ring);
+      }
 
-    function animate() {
-      requestAnimationFrame(animate);
-      var delta = clock.getDelta();
+      addRing(GLOBE_RADIUS * 1.35, Math.PI * 0.5, 0.3, 0.15);
+      addRing(GLOBE_RADIUS * 1.55, Math.PI * 0.45, -0.2, 0.1);
+      addRing(GLOBE_RADIUS * 1.15, Math.PI * 0.55, 0.5, 0.08);
 
-      autoRotation += delta * 0.15;
-      targetRotY = autoRotation + mouseX * 0.4;
-      targetRotX = mouseY * 0.2;
+      // --- Glow Sprite ---
+      var glowCanvas = document.createElement('canvas');
+      glowCanvas.width = 128;
+      glowCanvas.height = 128;
+      var gCtx = glowCanvas.getContext('2d');
+      var gradient = gCtx.createRadialGradient(64, 64, 0, 64, 64, 64);
+      gradient.addColorStop(0, 'rgba(230,255,169,0.15)');
+      gradient.addColorStop(0.4, 'rgba(230,255,169,0.05)');
+      gradient.addColorStop(1, 'rgba(230,255,169,0)');
+      gCtx.fillStyle = gradient;
+      gCtx.fillRect(0, 0, 128, 128);
+      var glowTexture = new THREE.CanvasTexture(glowCanvas);
+      var glowMat = new THREE.SpriteMaterial({
+        map: glowTexture,
+        transparent: true,
+        opacity: 0.6,
+      });
+      var glow = new THREE.Sprite(glowMat);
+      glow.scale.set(4.5, 4.5, 1);
+      scene.add(glow);
 
-      globeGroup.rotation.y += (targetRotY - globeGroup.rotation.y) * 0.05;
-      globeGroup.rotation.x += (targetRotX - globeGroup.rotation.x) * 0.05;
+      // --- Globe group for rotation ---
+      var globeGroup = new THREE.Group();
+      globeGroup.add(shell);
+      globeGroup.add(dots);
+      globeGroup.add(cityDots);
+      globeGroup.add(arcGroup);
+      scene.add(globeGroup);
 
-      ringGroup.rotation.y += delta * 0.05;
-      ringGroup.rotation.x += delta * 0.02;
+      // --- Interaction ---
+      var mouseX = 0, mouseY = 0;
+      var targetRotX = 0, targetRotY = 0;
 
-      // Pulse city dot opacity
-      var pulse = 0.7 + 0.3 * Math.sin(clock.elapsedTime * 2);
-      cityMat.opacity = pulse;
+      container.addEventListener('mousemove', function (e) {
+        var rect = container.getBoundingClientRect();
+        mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+        mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      });
 
-      renderer.render(scene, camera);
-    }
+      container.addEventListener('mouseleave', function () {
+        mouseX = 0;
+        mouseY = 0;
+      });
 
-    // --- Resize ---
-    function onResize() {
-      var w = container.clientWidth;
-      var h = container.clientHeight;
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-      renderer.setSize(w, h);
-    }
+      // --- Animation ---
+      var autoRotation = 0;
+      var clock = new THREE.Clock();
 
-    window.addEventListener('resize', onResize);
+      function animate() {
+        requestAnimationFrame(animate);
+        var delta = clock.getDelta();
 
-    // Use ResizeObserver for container size changes
-    if (typeof ResizeObserver !== 'undefined') {
-      new ResizeObserver(onResize).observe(container);
-    }
+        autoRotation += delta * 0.15;
+        targetRotY = autoRotation + mouseX * 0.4;
+        targetRotX = mouseY * 0.2;
 
-    animate();
-  })();
+        globeGroup.rotation.y += (targetRotY - globeGroup.rotation.y) * 0.05;
+        globeGroup.rotation.x += (targetRotX - globeGroup.rotation.x) * 0.05;
+
+        ringGroup.rotation.y += delta * 0.05;
+        ringGroup.rotation.x += delta * 0.02;
+
+        // Pulse city dot opacity
+        var pulse = 0.7 + 0.3 * Math.sin(clock.elapsedTime * 2);
+        cityMat.opacity = pulse;
+
+        renderer.render(scene, camera);
+      }
+
+      // --- Resize ---
+      function onResize() {
+        var w = container.clientWidth;
+        var h = container.clientHeight;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      }
+
+      window.addEventListener('resize', onResize);
+
+      // Use ResizeObserver for container size changes
+      if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(onResize).observe(container);
+      }
+
+      animate();
+    })();
   </script>
 </body>
 

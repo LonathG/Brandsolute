@@ -2322,7 +2322,7 @@ figure {
 }
 
 .body-text.logos-title {
-  max-width: 240px;
+  max-width: 350px;
 }
 
 .icon-link-box-arrow {
@@ -3897,6 +3897,8 @@ figure {
 
 .logo-marquee-item {
   opacity: .5;
+  max-height: 40px;
+  width: auto;
 }
 
 .logo-marquee-wrap {
