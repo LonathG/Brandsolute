@@ -148,54 +148,10 @@ body {
       <div data-w-id="c30ef5b3-0df6-9706-d481-8dbfcf3a582d" style="-webkit-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="vertical-section tight">
         <div class="heading-h2">Continue reading</div>
         <div class="w-dyn-list">
-          <div role="list" class="blog-grid w-dyn-items">
-            <div role="listitem" class="w-dyn-item">
-              <a href="detail_blog-posts.html" class="blog-card w-inline-block">
-                <div class="zoom-image-link blog-image"><img src="images/customer-03.webp" alt="" class="zoom-image"></div>
-                <div class="blog-card-body">
-                  <div class="heading-h5">How data is rewriting the future of human capability</div>
-                  <div class="blog-card-meta">
-                    <div data-wf--badge-title--variant="base" class="badge-title">
-                      <div class="square"></div>
-                      <div class="badge-text">INSIGHT</div>
-                    </div>
-                    <div class="badge-text muted">27.03.25</div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div role="listitem" class="w-dyn-item">
-              <a href="detail_blog-posts.html" class="blog-card w-inline-block">
-                <div class="zoom-image-link blog-image"><img src="images/blog-02.webp" alt="" class="zoom-image"></div>
-                <div class="blog-card-body">
-                  <div class="heading-h5">The next frontier in decoding complex life systems</div>
-                  <div class="blog-card-meta">
-                    <div data-wf--badge-title--variant="base" class="badge-title">
-                      <div class="square"></div>
-                      <div class="badge-text">INSIGHT</div>
-                    </div>
-                    <div class="badge-text muted">08.03.25</div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div role="listitem" class="w-dyn-item">
-              <a href="detail_blog-posts.html" class="blog-card w-inline-block">
-                <div class="zoom-image-link blog-image"><img src="images/landscape-02.webp" alt="" class="zoom-image"></div>
-                <div class="blog-card-body">
-                  <div class="heading-h5">Designing machines that understand biology</div>
-                  <div class="blog-card-meta">
-                    <div data-wf--badge-title--variant="base" class="badge-title">
-                      <div class="square"></div>
-                      <div class="badge-text">NEWS</div>
-                    </div>
-                    <div class="badge-text muted">21.03.25</div>
-                  </div>
-                </div>
-              </a>
-            </div>
+          <div role="list" class="blog-grid w-dyn-items" id="related-blog-grid-container">
+            <!-- Dynamically populated by JS -->
           </div>
-          <div class="empty-state w-dyn-empty">
+          <div class="empty-state w-dyn-empty" id="related-blog-empty-state" style="display: none;">
             <div>No items found.</div>
           </div>
         </div>
@@ -312,6 +268,55 @@ body {
     document.addEventListener("DOMContentLoaded", async () => {
       const urlParams = new URLSearchParams(window.location.search);
       const slug = urlParams.get('slug');
+
+      // Fetch the related blogs for the 'Continue reading' section
+      try {
+        const relatedResponse = await fetch(`${window.STRAPI_URL}/api/blogs?populate=*&pagination[limit]=3`);
+        if (relatedResponse.ok) {
+          const relatedResult = await relatedResponse.json();
+          const blogs = relatedResult.data;
+          const relatedGrid = document.getElementById('related-blog-grid-container');
+          const relatedEmpty = document.getElementById('related-blog-empty-state');
+          
+          if (blogs && blogs.length > 0) {
+            blogs.forEach(blog => {
+              // Optionally skip the current blog if it matches the slug
+              if (blog.slug === slug) return;
+
+              const imageUrl = blog.coverImage?.url
+                ? (blog.coverImage.url.startsWith('http') ? blog.coverImage.url : window.STRAPI_URL + blog.coverImage.url)
+                : 'images/customer-03.webp';
+
+              const date = new Date(blog.publishedAt).toLocaleDateString('en-GB');
+              
+              const html = `
+                <div role="listitem" class="w-dyn-item">
+                  <a href="detail_blog-posts.html?slug=${blog.slug}" class="blog-card w-inline-block">
+                    <div class="zoom-image-link blog-image">
+                      <img src="${imageUrl}" alt="${blog.title}" class="zoom-image" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="blog-card-body">
+                      <div class="heading-h5">${blog.title}</div>
+                      <div class="blog-card-meta">
+                        <div data-wf--badge-title--variant="base" class="badge-title">
+                          <div class="square"></div>
+                          <div class="badge-text">ARTICLE</div>
+                        </div>
+                        <div class="badge-text muted">${date}</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              `;
+              relatedGrid.insertAdjacentHTML('beforeend', html);
+            });
+          } else {
+            if (relatedEmpty) relatedEmpty.style.display = 'block';
+          }
+        }
+      } catch (e) {
+        console.error('Error fetching related blogs:', e);
+      }
 
       if (!slug) {
         document.getElementById('blog-title').innerText = 'Post not found';

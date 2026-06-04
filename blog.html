@@ -508,7 +508,7 @@
 
         const blogGrid = document.getElementById('blog-grid-container');
         const emptyState = document.getElementById('blog-empty-state');
-        
+
         if (blogs && blogs.length > 0) {
           blogs.forEach(blog => {
             const imageUrl = blog.coverImage?.url
@@ -516,7 +516,7 @@
               : 'images/customer-03.webp';
 
             const date = new Date(blog.publishedAt).toLocaleDateString('en-GB');
-            
+
             const html = `
               <div role="listitem" class="w-dyn-item">
                 <a href="detail_blog-posts.html?slug=${blog.slug}" class="blog-card w-inline-block">
