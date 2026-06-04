@@ -443,6 +443,175 @@
         max-height: 350px;
       }
     }
+
+    /* Custom Centered Hero Styles */
+    .custom-hero-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      width: 100%;
+      min-height: calc(100vh - 120px);
+      text-align: center;
+      position: relative;
+      padding-bottom: 80px;
+      box-sizing: border-box;
+    }
+
+    .custom-hero-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .custom-hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      color: #ffffff;
+      margin: 0 0 24px 0;
+      text-align: center;
+      line-height: 1.15;
+      letter-spacing: -2px;
+      font-size: 80px;
+    }
+
+    .custom-hero-gradient {
+      background: linear-gradient(135deg, #e4ffc2 0%, #a3e878 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+    }
+
+    .custom-hero-subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.95);
+      margin: 0 0 80px 0;
+      line-height: 1.5;
+      max-width: 650px;
+      text-align: center;
+    }
+
+    .custom-hero-services {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.5px;
+      word-spacing: 1px;
+      text-align: center;
+    }
+
+    .custom-hero-scroll-btn {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .custom-hero-scroll-btn:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      transform: translateX(-50%) translateY(3px);
+    }
+
+    /* Spacing & Font adjustments for Larger Desktop (27 inch and up) */
+    @media (min-width: 1920px) {
+      .custom-hero-wrap {
+        min-height: calc(100vh - 160px);
+      }
+
+      .custom-hero-title {
+        font-size: 96px;
+        margin-bottom: 32px;
+      }
+
+      .custom-hero-subtitle {
+        font-size: 28px;
+        max-width: 750px;
+        margin-bottom: 100px;
+      }
+
+      .custom-hero-services {
+        font-size: 18px;
+      }
+
+      .custom-hero-scroll-btn {
+        bottom: 40px;
+        width: 56px;
+        height: 56px;
+      }
+    }
+
+    /* Spacing & Font adjustments for Tablet (up to 991px) */
+    @media (max-width: 991px) {
+      .custom-hero-title {
+        font-size: 64px;
+        letter-spacing: -1.5px;
+      }
+
+      .custom-hero-subtitle {
+        font-size: 20px;
+        max-width: 550px;
+        margin-bottom: 60px;
+      }
+
+      .custom-hero-services {
+        font-size: 14px;
+      }
+    }
+
+    /* Spacing & Font adjustments for Mobile (up to 479px) */
+    @media (max-width: 479px) {
+      .custom-hero-wrap {
+        padding-top: 40px;
+        min-height: calc(100vh - 100px);
+      }
+
+      .custom-hero-title {
+        font-size: 44px;
+        letter-spacing: -1px;
+        margin-bottom: 16px;
+      }
+
+      .custom-hero-subtitle {
+        font-size: 16px;
+        max-width: 320px;
+        margin-bottom: 48px;
+      }
+
+      .custom-hero-services {
+        font-size: 12px;
+        line-height: 1.8;
+        max-width: 280px;
+      }
+
+      .custom-hero-scroll-btn {
+        bottom: 16px;
+        width: 40px;
+        height: 40px;
+      }
+    }
   </style>
 </head>
 
@@ -538,140 +707,29 @@
   <section class="section wide-section">
     <div data-w-id="bda6ecc7-7139-7fde-4705-a886fcfc5987" class="wide-section-content hero-2 gray-hero-bg">
       <div class="main-container inside-wide-section">
-        <div class="vertical-content hero-2-content-wrap">
-          <div class="hero-2-heading-wrap">
-            <h1 class="display-heading">We Build<br><span class="hero-gradient-text">Absolute Brands</span></h1>
-            <div class="heading-h5">Brandsolute is a strategy-led consultancy that builds clear, high-performing growth
-              marketing systems for businesses that want to scale</div>
+        <div class="custom-hero-wrap">
+          <div class="custom-hero-center">
+            <h1 class="custom-hero-title">
+              We Build<br><span class="custom-hero-gradient">Absolute Brands</span>
+            </h1>
+            <p class="custom-hero-subtitle">
+              One partner for the brand, the growth, and the numbers that move them.
+            </p>
+            <div class="custom-hero-services">
+              Brand Strategy | Growth Marketing | Digital Experiences | Data Intelligence
+            </div>
           </div>
-          <div class="hero-2-content">
-            <div class="text-block-2">Brand Strategy | Growth Marketing | Digital Experience | Data Intelligence</div>
-            <a rel="nofollow" data-wf--button--variant="dark" href="contact.html"
-              class="button w-variant-8f2d086e-6eb8-7b77-ee37-541ee494b16f w-inline-block">
-              <div class="button-text-wrapper">
-                <div class="button-text">Talk to us</div>
-                <div class="button-text">Talk to us</div>
-              </div>
-            </a>
-          </div>
+          <a href="#next-section" class="custom-hero-scroll-btn" aria-label="Scroll down">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
         </div>
       </div>
       <canvas class="grid-bg interactive-dots" id="hero-dots-canvas"></canvas>
       <div class="noise-bg"></div>
-      <div class="background-effect-wrapper transparent gray-gradient">
-        <div data-w-id="624752d4-8402-b38c-2405-4f39c59d51f4" class="hero-blob-wrapper-a">
-          <div class="blob hero-blob-a1">s</div>
-          <div data-w-id="624752d4-8402-b38c-2405-4f39c59d51f7" class="blob hero-blob-a2">s</div>
-        </div>
-        <div data-w-id="624752d4-8402-b38c-2405-4f39c59d51f9" class="hero-blob-wrapper-b">
-          <div class="blob hero-blob-b1">g</div>
-          <div class="blob hero-blob-b2">u</div>
-        </div>
-        <div data-w-id="624752d4-8402-b38c-2405-4f39c59d51fe" class="hero-blob-wrapper-c">
-          <div class="blob hero-blob-c1">z</div>
-          <div data-w-id="624752d4-8402-b38c-2405-4f39c59d5201" class="blob hero-blob-c2">d</div>
-        </div>
-        <div data-w-id="624752d4-8402-b38c-2405-4f39c59d5203" class="hero-blob-wrapper-d">
-          <div class="blob hero-blob-d1">d</div>
-          <div class="blob hero-blob-d2">g</div>
-        </div>
-        <div data-w-id="624752d4-8402-b38c-2405-4f39c59d5208" class="hero-blob-wrapper-e">
-          <div class="blob hero-blob-e1">s</div>
-          <div data-w-id="624752d4-8402-b38c-2405-4f39c59d520b" class="blob hero-blob-e2">r</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="main-container">
-      <div class="vertical-section sticky-services">
-        <div class="grid">
-          <div data-w-id="29bc71f8-de30-364d-0db0-88ef57d612b8"
-            style="-webkit-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-            class="section-contents">
-            <div class="vertical-content">
-              <div data-wf--badge-title--variant="base" class="badge-title">
-                <div class="square"></div>
-                <div class="badge-text">Our Impact</div>
-              </div>
-              <div class="heading-h2">Break down the barriers between brand and bottom line</div>
-              <p>We turn bold ideas into decisive action by building the link between what customers believe, how they
-                choose, and how the business grows.</p>
-            </div>
-            <div class="metrics-row">
-              <div class="metric-item">
-                <div class="heading-h1">150+</div>
-                <div class="bold">Active Projects</div>
-              </div>
-              <div class="metric-item">
-                <div class="heading-h1">97%</div>
-                <div class="bold">Client Retention Rate</div>
-              </div>
-              <div class="metric-item">
-                <div class="heading-h1">95%</div>
-                <div class="bold">Client Satisfaction Rate</div>
-              </div>
-            </div>
-          </div>
-          <div class="w-embed">
-            <div class="globe-container" id="globe-container">
-              <canvas id="globe-canvas"></canvas>
-            </div>
-          </div>
-        </div>
-        <div data-w-id="29bc71f8-de30-364d-0db0-88ef57d612d1"
-          style="-webkit-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-          class="logos-adjacent">
-          <div class="body-text logos-title">Built for leaders and brands that refuse to stand still</div>
-          <div class="about-marquee-wrap">
-            <div class="marquee">
-              <div class="marquee-scrim"></div>
-              <div class="marquee-group">
-                <div class="logo-marquee-row">
-                  <img src="images/Brandsolute Client Logos/Anker.png" alt="" class="logo-marquee-item">
-                  <img src="images/Brandsolute Client Logos/Soundcore-01.png" alt="" class="logo-marquee-item">
-                  <img src="images/Brandsolute Client Logos/MAS.png" alt="" class="logo-marquee-item">
-                  <img src="images/Brandsolute Client Logos/unilever.png" alt="" class="logo-marquee-item"
-                    style="max-height: 55px;">
-                  <img src="images/Brandsolute Client Logos/webxpay.png" alt="" class="logo-marquee-item">
-                  <img src="images/Brandsolute Client Logos/Intermarc.png" alt="" class="logo-marquee-item">
-                  <img src="images/Brandsolute Client Logos/Neelakandan.png" alt="" class="logo-marquee-item">
-                  <img src="images/Brandsolute Client Logos/Browns-Hotels-_-Resorts-Logo (1) 1.png" alt=""
-                    class="logo-marquee-item" style="max-height: 95px;">
-                  <img src="images/Brandsolute Client Logos/Thema - Negative - Horizontal Logo 1.png" alt=""
-                    class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/Brandsolute Client Logos/Ceylon Hotel Corp.png" alt="" class="logo-marquee-item"
-                    style="max-height: 95px;">
-                  <img src="images/Brandsolute Client Logos/teleseen.png" alt="" class="logo-marquee-item">
-                  <img src="images/Brandsolute Client Logos/findmyfare.png" alt="" class="logo-marquee-item"
-                    style="max-height: 75px;">
-                  <img src="images/Brandsolute Client Logos/catch.png" alt="" class="logo-marquee-item"
-                    style="max-height: 55px;">
-                  <img src="images/Brandsolute Client Logos/ekho.png" alt="" class="logo-marquee-item"
-                    style="max-height: 55px;">
-                  <img src="images/Brandsolute Client Logos/Barcelo.png" alt="" class="logo-marquee-item"
-                    style="max-height: 55px;">
-                  <img src="images/Brandsolute Client Logos/Reveal.png" alt="" class="logo-marquee-item"
-                    style="max-height: 55px;">
-                  <img src="images/Brandsolute Client Logos/cookie people.png" alt="" class="logo-marquee-item"
-                    style="max-height: 55px;">
-                  <img src="images/Brandsolute Client Logos/Hyperion.png" alt="" class="logo-marquee-item">
-                  <img src="images/Brandsolute Client Logos/anantaya.png" alt="" class="logo-marquee-item"
-                    style="max-height: 55px;">
-                </div>
-              </div>
-            </div>
-            <!-- <div class="marquee-group">
-              <div class="logo-marquee-row"><img src="images/logo-gridpoint.svg" alt="" class="logo-marquee-item"><img
-                  src="images/logo-eisnersterling.svg" alt="" class="logo-marquee-item"><img
-                  src="images/logo-contiuumai.svg" alt="" class="logo-marquee-item"><img src="images/logo-monkey.svg"
-                  alt="" class="logo-marquee-item"><img src="images/logo-givonni.svg" alt="" class="logo-marquee-item">
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </div>
-    </div>
     </div>
   </section>
   <section class="section top-padding-l">
@@ -808,6 +866,100 @@
       </div>
     </div>
   </section>
+
+  <section class="section" id="next-section">
+    <div class="main-container">
+      <div class="vertical-section sticky-services">
+        <div class="grid">
+          <div data-w-id="29bc71f8-de30-364d-0db0-88ef57d612b8"
+            style="-webkit-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+            class="section-contents">
+            <div class="vertical-content">
+              <div data-wf--badge-title--variant="base" class="badge-title">
+                <div class="square"></div>
+                <div class="badge-text">Our Impact</div>
+              </div>
+              <div class="heading-h2">Break down the barriers between brand and bottom line</div>
+              <p>We turn bold ideas into decisive action by building the link between what customers believe, how they
+                choose, and how the business grows.</p>
+            </div>
+            <div class="metrics-row">
+              <div class="metric-item">
+                <div class="heading-h1">150+</div>
+                <div class="bold">Active Projects</div>
+              </div>
+              <div class="metric-item">
+                <div class="heading-h1">97%</div>
+                <div class="bold">Client Retention Rate</div>
+              </div>
+              <div class="metric-item">
+                <div class="heading-h1">95%</div>
+                <div class="bold">Client Satisfaction Rate</div>
+              </div>
+            </div>
+          </div>
+          <div class="w-embed">
+            <div class="globe-container" id="globe-container">
+              <canvas id="globe-canvas"></canvas>
+            </div>
+          </div>
+        </div>
+        <div data-w-id="29bc71f8-de30-364d-0db0-88ef57d612d1"
+          style="-webkit-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+          class="logos-adjacent">
+          <div class="body-text logos-title">Built for leaders and brands that refuse to stand still</div>
+          <div class="about-marquee-wrap">
+            <div class="marquee">
+              <div class="marquee-scrim"></div>
+              <div class="marquee-group">
+                <div class="logo-marquee-row">
+                  <img src="images/Brandsolute Client Logos/Anker.png" alt="" class="logo-marquee-item">
+                  <img src="images/Brandsolute Client Logos/Soundcore-01.png" alt="" class="logo-marquee-item">
+                  <img src="images/Brandsolute Client Logos/MAS.png" alt="" class="logo-marquee-item">
+                  <img src="images/Brandsolute Client Logos/unilever.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/Brandsolute Client Logos/webxpay.png" alt="" class="logo-marquee-item">
+                  <img src="images/Brandsolute Client Logos/Intermarc.png" alt="" class="logo-marquee-item">
+                  <img src="images/Brandsolute Client Logos/Neelakandan.png" alt="" class="logo-marquee-item">
+                  <img src="images/Brandsolute Client Logos/Browns-Hotels-_-Resorts-Logo (1) 1.png" alt=""
+                    class="logo-marquee-item" style="max-height: 95px;">
+                  <img src="images/Brandsolute Client Logos/Thema - Negative - Horizontal Logo 1.png" alt=""
+                    class="logo-marquee-item" style="max-height: 55px;">
+                  <img src="images/Brandsolute Client Logos/Ceylon Hotel Corp.png" alt="" class="logo-marquee-item"
+                    style="max-height: 95px;">
+                  <img src="images/Brandsolute Client Logos/teleseen.png" alt="" class="logo-marquee-item">
+                  <img src="images/Brandsolute Client Logos/findmyfare.png" alt="" class="logo-marquee-item"
+                    style="max-height: 75px;">
+                  <img src="images/Brandsolute Client Logos/catch.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/Brandsolute Client Logos/ekho.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/Brandsolute Client Logos/Barcelo.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/Brandsolute Client Logos/Reveal.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/Brandsolute Client Logos/cookie people.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/Brandsolute Client Logos/Hyperion.png" alt="" class="logo-marquee-item">
+                  <img src="images/Brandsolute Client Logos/anantaya.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                </div>
+              </div>
+            </div>
+            <!-- <div class="marquee-group">
+              <div class="logo-marquee-row"><img src="images/logo-gridpoint.svg" alt="" class="logo-marquee-item"><img
+                  src="images/logo-eisnersterling.svg" alt="" class="logo-marquee-item"><img
+                  src="images/logo-contiuumai.svg" alt="" class="logo-marquee-item"><img src="images/logo-monkey.svg"
+                  alt="" class="logo-marquee-item"><img src="images/logo-givonni.svg" alt="" class="logo-marquee-item">
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
   <section class="section no-top-padding">
     <div class="main-container">
       <div class="vertical-content" style="margin-bottom: 48px;">
