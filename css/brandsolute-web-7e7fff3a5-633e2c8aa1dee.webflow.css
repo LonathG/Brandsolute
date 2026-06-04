@@ -2322,7 +2322,8 @@ figure {
 }
 
 .body-text.logos-title {
-  max-width: 350px;
+  min-width: 200px;
+  max-width: 650px;
 }
 
 .icon-link-box-arrow {
@@ -6000,9 +6001,9 @@ figure {
     display: flex;
   }
 
-  .body-text.logos-title {
+  /* .body-text.logos-title {
     max-width: 100%;
-  }
+  } */
 
   .dropdown-cta.hide-on-tablet {
     display: none;
