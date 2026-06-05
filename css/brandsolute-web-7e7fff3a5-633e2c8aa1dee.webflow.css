@@ -8157,6 +8157,9 @@ h1.display-heading {
 @media screen and (max-width: 767px) {
   .engagement-heading {
     margin-bottom: 40px;
+
+
+
   }
 
 }
@@ -8172,14 +8175,5 @@ h1.display-heading {
 
   .card-number-text {
     font-size: 24px;
-  }
-}
-
-/* Force mobile layouts to not stretch beyond viewport */
-@media screen and (max-width: 991px) {
-  .main-container, .vertical-section, .grid, .section-contents, .vertical-content, .industry-grid, .industry-detail-card, .logos-adjacent {
-    max-width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
   }
 }

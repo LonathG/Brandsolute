@@ -268,6 +268,14 @@
       clip-path: inset(0% 0% 10% 0%);
     }
 
+    @media screen and (max-width: 767px) {
+      .main-container, .vertical-section, .grid, .section-contents, .vertical-content, .industry-grid, .industry-detail-card, .logos-adjacent {
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+      }
+    }
+
     .globe-container iframe {
       display: block;
       width: 100%;
@@ -692,7 +700,7 @@
               </div>
             </div>
           </div>
-          <div class="w-embed" style="max-width: 100%; overflow: hidden; display: flex; justify-content: center;">
+          <div class="w-embed" style="width: 100%; min-width: 0; max-width: 100%; overflow: hidden; display: flex; justify-content: center;">
             <div class="globe-container" id="globe-container">
               <iframe src="Brandsolute - Globe (standalone).html" title="Brandsolute Globe" loading="lazy"
                 pointer-events="none" allowtransparency="true"></iframe>
