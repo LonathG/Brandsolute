@@ -415,9 +415,8 @@
       transform: translateY(-2px) !important;
     }
 
-    /* Globe iframe styling */
     .globe-container {
-      width: 750px;
+      width: 500px;
       aspect-ratio: 1;
       max-height: 100%;
       position: relative;
@@ -425,6 +424,9 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+
+      /* Crops the bottom 10%. Adjust the 90% value as needed */
+      clip-path: inset(0% 0% 10% 0%);
     }
 
     .globe-container iframe {
@@ -433,7 +435,7 @@
       height: 100%;
       border: none;
       background: transparent;
-      transform: scale(2) translateX(-5%);
+      transform: scale(2) translateX(-18%);
       transform-origin: center center;
       mix-blend-mode: lighten;
     }
