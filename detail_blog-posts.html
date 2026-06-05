@@ -392,16 +392,25 @@
           const date = new Date(blog.publishedAt).toLocaleDateString('en-GB');
           document.getElementById('blog-date').innerText = date;
 
+          // Determine fallback image if coverImage is not present
+          let finalImageUrl = 'images/customer-03.webp'; // default
           if (blog.coverImage?.url) {
-            const imageUrl = blog.coverImage.url.startsWith('http') ? blog.coverImage.url : window.STRAPI_URL + blog.coverImage.url;
-            document.getElementById('blog-hero-image').src = imageUrl;
-
-            // Update Meta & OpenGraph Images
-            const ogImage = document.querySelector('meta[property="og:image"]');
-            if (ogImage) ogImage.setAttribute('content', imageUrl);
-            const twitterImage = document.querySelector('meta[name="twitter:image"]');
-            if (twitterImage) twitterImage.setAttribute('content', imageUrl);
+            finalImageUrl = blog.coverImage.url.startsWith('http') ? blog.coverImage.url : window.STRAPI_URL + blog.coverImage.url;
+          } else if (blog.content) {
+            // Try to find an image in the body to use as fallback
+            const firstImageBlock = blog.content.find(b => b.type === 'image');
+            if (firstImageBlock && firstImageBlock.image?.url) {
+              finalImageUrl = firstImageBlock.image.url.startsWith('http') ? firstImageBlock.image.url : window.STRAPI_URL + firstImageBlock.image.url;
+            }
           }
+
+          document.getElementById('blog-hero-image').src = finalImageUrl;
+
+          // Update Meta & OpenGraph Images
+          const ogImage = document.querySelector('meta[property="og:image"]');
+          if (ogImage) ogImage.setAttribute('content', finalImageUrl);
+          const twitterImage = document.querySelector('meta[name="twitter:image"]');
+          if (twitterImage) twitterImage.setAttribute('content', finalImageUrl);
 
           // 2. Extract first paragraph for introduction and meta descriptions
           let summary = '';
@@ -438,14 +447,8 @@
           if (twitterTitle) twitterTitle.setAttribute('content', blog.title);
 
           if (blog.content) {
-            let contentToRender = blog.content;
-            if (summary && blog.content.length > 1) {
-              const firstParaIndex = blog.content.findIndex(b => b.type === 'paragraph');
-              if (firstParaIndex !== -1) {
-                contentToRender = blog.content.filter((_, idx) => idx !== firstParaIndex);
-              }
-            }
-            const htmlContent = window.renderStrapiBlocks(contentToRender);
+            // Render the full body content without stripping the first paragraph
+            const htmlContent = window.renderStrapiBlocks(blog.content);
             document.getElementById('blog-content').innerHTML = htmlContent;
           }
         } else {
