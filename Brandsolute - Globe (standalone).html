@@ -24,7 +24,11 @@
       box-shadow: none !important;
     }
 
-    #spline-watermark, .spline-watermark, #logo, #ui-container, .spline-ui {
+    #spline-watermark,
+    .spline-watermark,
+    #logo,
+    #ui-container,
+    .spline-ui {
       display: none !important;
       opacity: 0 !important;
       visibility: hidden !important;
@@ -50,7 +54,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      /* background: transparent; */
+      background: transparent;
       z-index: 9999;
     }
 
@@ -133,6 +137,7 @@
 
         const manifest = JSON.parse(manifestEl.textContent);
         let template = JSON.parse(templateEl.textContent);
+        template = template.replace(/--bg: #121212;/g, '--bg: transparent;').replace(/background: var\(--bg\);/g, 'background: transparent;').replace(/background: #121212;/g, 'background: transparent;');
 
         const uuids = Object.keys(manifest);
         setStatus('Unpacking ' + uuids.length + ' assets...');
