@@ -501,7 +501,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
       try {
-        const response = await fetch(`${window.STRAPI_URL}/api/blogs?populate=*`);
+        const response = await fetch(`${window.STRAPI_URL}/api/blogs?populate=*&sort=publishedAt:desc`);
         if (!response.ok) throw new Error('Network response was not ok');
         const result = await response.json();
         const blogs = result.data;
@@ -538,8 +538,9 @@
             `;
             blogGrid.insertAdjacentHTML('beforeend', html);
           });
+          if (emptyState) emptyState.style.display = 'none';
         } else {
-          emptyState.style.display = 'block';
+          if (emptyState) emptyState.style.display = 'block';
         }
       } catch (error) {
         console.error('Error fetching blogs:', error);
