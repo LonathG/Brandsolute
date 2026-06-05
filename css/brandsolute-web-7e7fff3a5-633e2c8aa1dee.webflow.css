@@ -71,13 +71,13 @@
   --globals--navbar-height: 52px;
   --border-radius--small: 5px;
   --border-radius--default: 10px;
-  --colors-brand--brand-1: #6c588d;
+  --colors-brand--brand-1: #121212;
   --hero-sizes--default: 576px;
   --hero-sizes--small: 480px;
   --hero-sizes--large: 768px;
-  --colors-brand--brand-4: #e0835c;
-  --colors-brand--brand-2: #a2b79f;
-  --colors-brand--brand-3: #d8a373;
+  --colors-brand--brand-4: #54504a;
+  --colors-brand--brand-2: #434440;
+  --colors-brand--brand-3: #4b4642;
   --grid-gaps--loose: 48px;
   --colors-interface--faded-heading: #ffffff80;
   --grid-gaps--tight: 12px;
@@ -1579,13 +1579,13 @@ figure {
 .wide-section-content.cta {
   min-height: var(--hero-sizes--small);
   background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(108, 88, 141, 0.95) 0%,
+      rgba(84, 84, 84, 0.95) 0%,
       /* brand-1: purple */
-      rgba(224, 131, 92, 0.8) 35%,
+      rgba(98, 97, 97, 0.8) 35%,
       /* brand-4: coral */
-      rgba(162, 183, 159, 0.7) 65%,
+      rgba(86, 90, 85, 0.7) 65%,
       /* brand-2: sage green */
-      rgba(216, 163, 115, 0.5) 85%,
+      rgba(70, 62, 54, 0.5) 85%,
       /* brand-3: gold */
       #121212 100%) !important;
   transition: background 0.15s ease-out;
@@ -7971,9 +7971,9 @@ figure {
   z-index: 4;
 }
 
-/* Premium White to Cyber Green Text Gradient Effect */
+/* Premium White to Earthy Muted Text Gradient Effect */
 .hero-gradient-text {
-  background: linear-gradient(90deg, #ffffff 0%, #e1ffba 60%, #e6ffa9 100%) !important;
+  background: linear-gradient(90deg, #ffffff 0%, #e6e1d8 60%, #c4bfb5 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
