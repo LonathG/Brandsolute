@@ -998,6 +998,12 @@
   }
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 body {
   background-color: var(--colors-interface--dark);
   font-family: var(--typefaces--body);
@@ -6424,6 +6430,7 @@ figure {
   .industry-detail-card {
     grid-column-gap: 72px;
     grid-row-gap: 72px;
+    min-width: 0;
   }
 
   .contact-image {
@@ -8144,12 +8151,14 @@ h1.display-heading {
   .engagement-card {
     padding: 36px;
   }
+
 }
 
 @media screen and (max-width: 767px) {
   .engagement-heading {
     margin-bottom: 40px;
   }
+
 }
 
 @media screen and (max-width: 479px) {
@@ -8163,5 +8172,14 @@ h1.display-heading {
 
   .card-number-text {
     font-size: 24px;
+  }
+}
+
+/* Force mobile layouts to not stretch beyond viewport */
+@media screen and (max-width: 991px) {
+  .main-container, .vertical-section, .grid, .section-contents, .vertical-content, .industry-grid, .industry-detail-card, .logos-adjacent {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
 }
