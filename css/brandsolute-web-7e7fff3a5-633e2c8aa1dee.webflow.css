@@ -1579,7 +1579,7 @@ figure {
 .wide-section-content.cta,
 .wide-section-content.cta.gray-hero-bg {
   min-height: var(--hero-sizes--small);
-  background: 
+  background:
     radial-gradient(circle at top left, #E2FCA3 0%, transparent 60%),
     radial-gradient(circle at bottom right, #EAF87C 0%, transparent 60%),
     #515151 !important;
