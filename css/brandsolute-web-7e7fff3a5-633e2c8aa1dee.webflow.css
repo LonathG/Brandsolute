@@ -1576,19 +1576,13 @@ figure {
   min-height: 480px;
 }
 
-.wide-section-content.cta {
+.wide-section-content.cta,
+.wide-section-content.cta.gray-hero-bg {
   min-height: var(--hero-sizes--small);
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(84, 84, 84, 0.95) 0%,
-      /* brand-1: purple */
-      rgba(98, 97, 97, 0.8) 35%,
-      /* brand-4: coral */
-      rgba(86, 90, 85, 0.7) 65%,
-      /* brand-2: sage green */
-      rgba(70, 62, 54, 0.5) 85%,
-      /* brand-3: gold */
-      #121212 100%) !important;
-  transition: background 0.15s ease-out;
+  background: 
+    radial-gradient(circle at top left, #E2FCA3 0%, transparent 60%),
+    radial-gradient(circle at bottom right, #EAF87C 0%, transparent 60%),
+    #515151 !important;
   position: relative;
   overflow: hidden;
 }
