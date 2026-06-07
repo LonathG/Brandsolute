@@ -998,9 +998,6 @@
   }
 }
 
-html,
-body {}
-
 body {
   background-color: var(--colors-interface--dark);
   font-family: var(--typefaces--body);
