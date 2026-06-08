@@ -418,19 +418,109 @@
   <section class="section wide-section">
     <div data-w-id="40c4504e-7a0f-6847-203d-c4d800a81350" class="wide-section-content hero-2 gray-hero-bg">
       <div class="main-container inside-wide-section">
-        <div class="vertical-content hero-2-content-wrap">
-          <div class="hero-2-heading-wrap">
-            <h1 class="display-heading">The system behind <span class="hero-gradient-text">Absolute Brands</span></h1>
+        <style>
+          .custom-hero-services-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            max-width: 900px;
+            width: 100%;
+            margin-right: auto;
+            position: relative;
+            z-index: 10;
+          }
+          
+          .custom-hero-services-badge {
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+          }
+          
+          .custom-hero-services-badge-square {
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            margin-right: 8px;
+          }
+          
+          .custom-hero-services-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 56px;
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+          }
+          
+          .custom-hero-services-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 48px;
+          }
+          
+          .custom-hero-services-pill {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 16px 32px;
+            gap: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+          
+          .custom-hero-services-pill-item {
+            display: flex;
+            align-items: center;
+          }
+          
+          .custom-hero-services-pill-square {
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            margin-right: 12px;
+          }
+          
+          @media (max-width: 767px) {
+            .custom-hero-services-title {
+              font-size: 40px;
+            }
+            .custom-hero-services-pill {
+              padding: 16px 24px;
+              border-radius: 24px;
+            }
+          }
+        </style>
+        <div class="custom-hero-services-left">
+          <div class="custom-hero-services-badge">
+            <div class="custom-hero-services-badge-square"></div>
+            <div>THE SYSTEMS BEHIND ABSOLUTE BRANDS</div>
           </div>
-          <div class="hero-2-content">
-            <div class="text-block-2">Brand Strategy | Growth Marketing | Digital Experience | Data Intelligence</div>
-            <a rel="nofollow" data-wf--button--variant="dark" href="contact.html"
-              class="button w-variant-8f2d086e-6eb8-7b77-ee37-541ee494b16f w-inline-block">
-              <div class="button-text-wrapper">
-                <div class="button-text">Talk to us</div>
-                <div class="button-text">Talk to us</div>
-              </div>
-            </a>
+          <h1 class="custom-hero-services-title">Brand, growth, digital and data.<br>Built to connect from day one.</h1>
+          <p class="custom-hero-services-subtitle">Engage one area, several, or an ongoing partnership.</p>
+          <div class="custom-hero-services-pill">
+            <div class="custom-hero-services-pill-item">OUR SERVICES</div>
+            <div class="custom-hero-services-pill-item"><div class="custom-hero-services-pill-square"></div>BRAND STRATEGY</div>
+            <div class="custom-hero-services-pill-item"><div class="custom-hero-services-pill-square"></div>GROWTH MARKETING</div>
+            <div class="custom-hero-services-pill-item"><div class="custom-hero-services-pill-square"></div>DIGITAL EXPERIENCES</div>
+            <div class="custom-hero-services-pill-item"><div class="custom-hero-services-pill-square"></div>DATA INTELLIGENCE</div>
           </div>
         </div>
       </div>
