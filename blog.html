@@ -302,67 +302,130 @@
     </div>
   </div>
   <section class="section wide-section">
-    <div data-w-id="2f05b1de-36bf-430e-830a-945cc5c3d3d6" style="opacity:0"
-      class="wide-section-content page-title gray-hero-bg">
-      <div
-        style="opacity:0;-webkit-transform:translate3d(null, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-        class="main-container inside-wide-section">
-        <div class="blog-categories-hero">
-          <div class="vertical-content page-title-text">
-            <div data-wf--badge-title--variant="base" class="badge-title">
-              <div class="square"></div>
-              <div class="badge-text">our journal</div>
-            </div>
-            <div class="content---m">
-              <h1 class="display-heading">News and <span class="hero-gradient-text">insight.</span></h1>
-            </div>
-            <h2 class="heading-h5">Stay up to date with the latest news and resources from the Scion team.</h2>
+    <div data-w-id="2f05b1de-36bf-430e-830a-945cc5c3d3d6" style="opacity:0" class="wide-section-content page-title gray-hero-bg">
+      <div style="opacity:0;-webkit-transform:translate3d(null, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="main-container inside-wide-section">
+        <style>
+          .custom-hero-services-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            max-width: 900px;
+            width: 100%;
+            margin-right: auto;
+            position: relative;
+            z-index: 10;
+          }
+
+          .custom-hero-services-badge {
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+          }
+
+          .custom-hero-services-badge-square {
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            margin-right: 8px;
+          }
+
+          .custom-hero-services-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 56px;
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+          }
+
+          .custom-hero-services-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 48px;
+          }
+
+          .custom-hero-services-pill {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 16px 32px;
+            gap: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+
+          .custom-hero-services-pill-item {
+            display: flex;
+            align-items: center;
+          }
+
+          .custom-hero-services-pill-square {
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            margin-right: 12px;
+          }
+
+          @media (max-width: 767px) {
+            .custom-hero-services-title {
+              font-size: 40px;
+            }
+
+            .custom-hero-services-pill {
+              padding: 16px 24px;
+              border-radius: 24px;
+            }
+          }
+        </style>
+        <div class="custom-hero-services-left">
+          <div class="custom-hero-services-badge">
+            <div class="custom-hero-services-badge-square"></div>
+            <div>OUR JOURNAL</div>
           </div>
-          <!-- <div class="category-selector">
-            <div class="badge-text categories-title">categories</div>
-            <a href="blog.html" aria-current="page" class="category-link w-inline-block w--current">
-              <div class="category-text">all</div>
-              <div class="category-blip"></div>
-            </a>
-            <div class="w-dyn-list">
-              <div role="list" class="blog-categories-list w-dyn-items">
-                <div role="listitem" class="w-dyn-item">
-                  <a href="#" class="category-link w-inline-block">
-                    <div class="category-text w-dyn-bind-empty"></div>
-                    <div class="category-blip"></div>
-                  </a>
-                </div>
-              </div>
-              <div class="w-dyn-empty">
-                <div>No items found.</div>
-              </div>
+          <h1 class="custom-hero-services-title">News and insight.</h1>
+          <p class="custom-hero-services-subtitle">Stay up to date with the latest news and resources from the
+            Brandsolute team./p>
+          <div class="custom-hero-services-pill">
+            <div class="custom-hero-services-pill-item">CATEGORIES</div>
+            <div class="custom-hero-services-pill-item">
+              <div class="custom-hero-services-pill-square"></div>News
             </div>
-          </div> -->
+            <div class="custom-hero-services-pill-item">
+              <div class="custom-hero-services-pill-square"></div>Insights
+            </div>
+            <!-- <div class="custom-hero-services-pill-item">
+              <div class="custom-hero-services-pill-square"></div>DIGITAL EXPERIENCES
+            </div>
+            <div class="custom-hero-services-pill-item">
+              <div class="custom-hero-services-pill-square"></div>DATA INTELLIGENCE
+            </div> -->
+          </div>
         </div>
       </div>
       <canvas class="grid-bg interactive-dots" id="hero-dots-canvas"></canvas>
       <div class="noise-bg"></div>
       <div class="background-effect-wrapper gray-gradient">
-        <div data-w-id="f0180789-e8b8-fdb7-a4d1-1857e2e1c09b" class="hero-blob-wrapper-a">
-          <div class="blob hero-blob-a1 brand-color-4">s</div>
-          <div class="blob hero-blob-a2 brand-color-4">s</div>
-        </div>
-        <div data-w-id="f0180789-e8b8-fdb7-a4d1-1857e2e1c0a0" class="hero-blob-wrapper-b">
-          <div class="blob hero-blob-b1 brand-color-2">g</div>
-          <div class="blob hero-blob-b2 brand-color-2">u</div>
-        </div>
-        <div data-w-id="f0180789-e8b8-fdb7-a4d1-1857e2e1c0a5" class="hero-blob-wrapper-c">
-          <div class="blob hero-blob-c1 brand-color-3">z</div>
-          <div class="blob hero-blob-c2 brand-color-3">d</div>
-        </div>
-        <div data-w-id="f0180789-e8b8-fdb7-a4d1-1857e2e1c0aa" class="hero-blob-wrapper-d">
-          <div class="blob hero-blob-d1 brand-color-3">d</div>
-          <div class="blob hero-blob-d2 brand-color-3">g</div>
-        </div>
-        <div data-w-id="f0180789-e8b8-fdb7-a4d1-1857e2e1c0af" class="hero-blob-wrapper-e">
-          <div class="blob hero-blob-e1 brand-color-2">s</div>
-          <div class="blob hero-blob-e2 brand-color-2">r</div>
-        </div>
+        <div class="blob page-title-blob-a brand-color-2">qw</div>
+        <div class="blob page-title-blob-b brand-color-3">vc</div>
+        <div class="blob page-title-blob-c brand-color-4">mshm</div>
       </div>
     </div>
   </section>
@@ -423,7 +486,7 @@
       </div>
     </div>
   </section>
-      <style>
+  <style>
     .custom-footer {
       background-color: #212121;
       color: #fff;
@@ -434,6 +497,7 @@
       min-height: 80vh;
       font-family: inherit;
     }
+
     .custom-footer-top {
       display: flex;
       justify-content: space-between;
@@ -442,12 +506,14 @@
       flex-wrap: wrap;
       gap: 40px;
     }
+
     .custom-footer-title {
       font-size: clamp(40px, 6vw, 80px);
       line-height: 1.1;
       font-weight: 400;
       letter-spacing: -0.02em;
     }
+
     .custom-footer-btn {
       background-color: #fff;
       color: #000;
@@ -462,6 +528,7 @@
       gap: 8px;
       text-transform: uppercase;
     }
+
     .custom-footer-bottom {
       display: flex;
       flex-direction: column;
@@ -469,6 +536,7 @@
       margin-top: auto;
       padding-top: 80px;
     }
+
     .custom-footer-links-row {
       display: flex;
       justify-content: space-between;
@@ -477,6 +545,7 @@
       flex-wrap: wrap-reverse;
       gap: 40px;
     }
+
     .custom-footer-legal {
       display: flex;
       flex-direction: column;
@@ -487,6 +556,7 @@
       letter-spacing: 0.05em;
       font-weight: 500;
     }
+
     .custom-footer-socials {
       display: flex;
       justify-content: flex-end;
@@ -497,32 +567,39 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
+
     @media (max-width: 767px) {
       .custom-footer {
         padding: 60px 5%;
         min-height: auto;
         gap: 60px;
       }
+
       .custom-footer-top {
         flex-direction: column;
         gap: 24px;
       }
+
       .custom-footer-bottom {
         padding-top: 40px;
       }
+
       .custom-footer-links-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 32px;
       }
+
       .custom-footer-socials {
         justify-content: flex-start;
       }
     }
+
     @media (max-width: 479px) {
       .custom-footer {
         padding: 40px 5%;
       }
+
       .custom-footer-title {
         font-size: 36px;
       }
@@ -537,25 +614,38 @@
         <a href="contact.html" class="custom-footer-btn">
           LET'S COLLABORATE
           <svg width="8" height="8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </a>
       </div>
     </div>
     <div class="custom-footer-bottom">
       <div style="display: flex; justify-content: flex-end; width: 100%;">
-        <img src="images/White.png" alt="Brandsolute" style="width: 100%; max-width: 800px; height: auto; margin-bottom: 24px; display: block;">
+        <img src="images/White.png" alt="Brandsolute"
+          style="width: 100%; max-width: 800px; height: auto; margin-bottom: 24px; display: block;">
       </div>
       <div class="custom-footer-links-row">
         <div class="custom-footer-legal">
-          <a href="#" style="color: #777; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#777'">PRIVACY POLICY</a>
-          <a href="#" style="color: #777; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#777'">COOKIE POLICY</a>
+          <a href="#" style="color: #777; text-decoration: none; transition: color 0.2s;"
+            onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#777'">PRIVACY POLICY</a>
+          <a href="#" style="color: #777; text-decoration: none; transition: color 0.2s;"
+            onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#777'">COOKIE POLICY</a>
           <div style="margin-top: 4px;">©BRANDSOLUTE 2022-2026. ALL RIGHTS RESERVED.</div>
         </div>
         <div class="custom-footer-socials">
-          <a href="https://www.instagram.com/brandsolute/" style="color: #999; text-decoration: none; border: 1px solid #333; padding: 8px 16px; border-radius: 20px; transition: all 0.2s;" onmouseover="this.style.color='#fff'; this.style.borderColor='#fff'" onmouseout="this.style.color='#999'; this.style.borderColor='#333'" target="_blank">INSTAGRAM</a>
-          <a href="https://lk.linkedin.com/company/brandsolute" style="color: #999; text-decoration: none; border: 1px solid #333; padding: 8px 16px; border-radius: 20px; transition: all 0.2s;" onmouseover="this.style.color='#fff'; this.style.borderColor='#fff'" onmouseout="this.style.color='#999'; this.style.borderColor='#333'" target="_blank">LINKEDIN</a>
-          <a href="https://www.youtube.com/@Brandsolute" style="color: #999; text-decoration: none; border: 1px solid #333; padding: 8px 16px; border-radius: 20px; transition: all 0.2s;" onmouseover="this.style.color='#fff'; this.style.borderColor='#fff'" onmouseout="this.style.color='#999'; this.style.borderColor='#333'" target="_blank">YOUTUBE</a>
+          <a href="https://www.instagram.com/brandsolute/"
+            style="color: #999; text-decoration: none; border: 1px solid #333; padding: 8px 16px; border-radius: 20px; transition: all 0.2s;"
+            onmouseover="this.style.color='#fff'; this.style.borderColor='#fff'"
+            onmouseout="this.style.color='#999'; this.style.borderColor='#333'" target="_blank">INSTAGRAM</a>
+          <a href="https://lk.linkedin.com/company/brandsolute"
+            style="color: #999; text-decoration: none; border: 1px solid #333; padding: 8px 16px; border-radius: 20px; transition: all 0.2s;"
+            onmouseover="this.style.color='#fff'; this.style.borderColor='#fff'"
+            onmouseout="this.style.color='#999'; this.style.borderColor='#333'" target="_blank">LINKEDIN</a>
+          <a href="https://www.youtube.com/@Brandsolute"
+            style="color: #999; text-decoration: none; border: 1px solid #333; padding: 8px 16px; border-radius: 20px; transition: all 0.2s;"
+            onmouseover="this.style.color='#fff'; this.style.borderColor='#fff'"
+            onmouseout="this.style.color='#999'; this.style.borderColor='#333'" target="_blank">YOUTUBE</a>
         </div>
       </div>
     </div>
