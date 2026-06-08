@@ -1006,6 +1006,7 @@ body {
   line-height: var(--typography--body-line-height);
   font-feature-settings: "ss02" 1;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -1137,7 +1138,7 @@ figure {
 }
 
 .section.padding-l {
-  width: 100vw;
+  width: 100%;
   padding-top: var(--section-padding--large);
   padding-bottom: var(--section-padding--large);
   overflow: clip;
@@ -6005,7 +6006,7 @@ figure {
 
   .nav-menu {
     z-index: 999999;
-    width: 100vw;
+    width: 100%;
     margin-top: var(--globals--navbar-height);
     border-bottom-left-radius: var(--border-radius--small);
     border-bottom-right-radius: var(--border-radius--small);

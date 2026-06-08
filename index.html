@@ -626,6 +626,21 @@
         height: 40px;
       }
     }
+
+    @media screen and (max-width: 767px) {
+      .main-container,
+      .vertical-section,
+      .grid,
+      .section-contents,
+      .vertical-content,
+      .industry-grid,
+      .industry-detail-card,
+      .logos-adjacent {
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+      }
+    }
   </style>
 </head>
 
@@ -1770,12 +1785,17 @@
 
       .custom-footer-links-row {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center !important;
         gap: 32px;
       }
 
+      .custom-footer-legal {
+        align-items: center !important;
+        text-align: center !important;
+      }
+
       .custom-footer-socials {
-        justify-content: flex-start;
+        justify-content: center !important;
       }
     }
 
@@ -1805,7 +1825,7 @@
       </div>
     </div>
     <div class="custom-footer-bottom">
-      <div style="display: flex; justify-content: flex-end; width: 100%;">
+      <div style="display: flex; justify-content: center; width: 100%;">
         <img src="images/White.png" alt="Brandsolute"
           style="width: 100%; max-width: 800px; height: auto; margin-bottom: 24px; display: block;">
       </div>
