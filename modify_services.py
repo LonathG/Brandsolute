@@ -38,17 +38,21 @@ descriptions = {
     "Data Infrastructure": "The layer that connects every data source into one clean, trusted view. Nothing downstream works without it.",
     "Executive Dashboards": "The business performance view that replaces the deck you build before every board meeting.",
     "Custom Dashboards": "Built for a specific team or a specific question. Not a copy of the executive view.",
+    "Marketing Intelligence": "How the marketing numbers connect to revenue, pipeline and retention. Not a channel report. A business view.",
+    "Brand Intelligence": "How brand perception moves in market, tracked precisely. The basis for positioning decisions that hold.",
     "Funnel Diagnostics": "The journey from awareness to revenue, mapped precisely. Where it accelerates and where it does not.",
     "Forecasting": "Where the business is heading, modelled on what is actually happening, not what was budgeted.",
     "Business Performance": "Revenue, margin, operations, and people in one view. The full business, not just the marketing layer.",
     "Audience & Customer Insights": "The data behind your best customers: who they are, how they buy, and what makes them stay."
 }
 
-with open("services.html", "r") as f:
+with open("/Users/lonathg/Documents/Brandsolute/Brandsolute Web/services.html", "r") as f:
     content = f.read()
 
-# 1. Update CSS
-css_pattern = re.compile(r'/\* First child \(Active\) pill.*?(?=\.w-layout-grid)', re.DOTALL)
+# 1. Update CSS to remove glow effect and first-child specific styles
+# Match everything from `/* First child (Active) pill` to just before `/* Footer` or `.w-layout-grid`
+# We'll just carefully replace the CSS block we know is there.
+css_pattern = re.compile(r'/\* First child \(Active\) pill.*?(?=\s*\/\*|\.w-layout-grid|<\/style)', re.DOTALL)
 new_css = """
     /* Hover effect without glow */
     .quick-stack .button-3:hover {
@@ -64,13 +68,11 @@ content = css_pattern.sub(new_css, content)
 # 2. Add data-desc to buttons
 def replacer(match):
     full_tag = match.group(0)
-    text = match.group(2)
-    # decode HTML entities if any
+    text = match.group(1)
     text_clean = text.replace("&amp;", "&").strip()
     desc = descriptions.get(text_clean, "")
     if desc:
         desc_escaped = desc.replace('"', '&quot;')
-        # add data-desc
         return f'<a href="#" class="button-3 w-button" data-desc="{desc_escaped}">{text}</a>'
     return full_tag
 
@@ -103,9 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 """
 
-content = content.replace('</body>', js + '\n</body>')
+if "document.querySelectorAll('.quick-stack');" not in content:
+    content = content.replace('</body>', js + '\n</body>')
 
-with open("services.html", "w") as f:
+with open("/Users/lonathg/Documents/Brandsolute/Brandsolute Web/services.html", "w") as f:
     f.write(content)
 
 print("Done")
