@@ -1341,6 +1341,12 @@
       letter-spacing: 0.1em;
     }
 
+    .custom-footer-logo-wrap {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
     @media (max-width: 767px) {
       .custom-footer {
         padding: 60px 5%;
@@ -1371,6 +1377,10 @@
       .custom-footer-socials {
         justify-content: center !important;
       }
+
+      .custom-footer-logo-wrap {
+        justify-content: center !important;
+      }
     }
 
     @media (max-width: 479px) {
@@ -1399,7 +1409,7 @@
       </div>
     </div>
     <div class="custom-footer-bottom">
-      <div style="display: flex; justify-content: center; width: 100%;">
+      <div class="custom-footer-logo-wrap">
         <img src="images/White.png" alt="Brandsolute"
           style="width: 100%; max-width: 800px; height: auto; margin-bottom: 24px; display: block;">
       </div>
