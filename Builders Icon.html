@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Builders — Arrows Up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --green: #E1F9A7;
+    --idle-ink: #ECEBE3;
+    --dur: 1.15s;
+    --expand: 1.08;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #1E1E1E;
+    display: grid; place-items: center;
+    font-family: 'Google Sans Flex', system-ui, sans-serif; }
+  .box { position: relative; width: min(72vmin, 360px); aspect-ratio: 1 / 1;
+    border-radius: 10px; background: #121212; overflow: hidden;
+    display: grid; place-items: center; cursor: pointer; }
+  .tex { position: absolute; inset: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1.4px);
+    background-size: 30px 30px; background-position: 6px 6px; }
+  .grain { position: absolute; inset: 0; pointer-events: none; opacity: 0.5; mix-blend-mode: overlay; }
+  .icon { width: 96px; height: 96px; display: block; overflow: visible; }
+  .fit { transform-box: fill-box; transform-origin: center; transform: scale(1);
+    transition: transform var(--dur) cubic-bezier(.2,.7,.25,1); }
+  .box.is-hot .fit { transform: scale(var(--expand)); }
+  .lit { fill: var(--idle-ink); transition: fill var(--dur) ease; }
+  .box.is-hot .lit { fill: var(--green); }
+  @media (prefers-reduced-motion: reduce) { .fit, .lit { transition: none !important; } }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const ARROW_SPEED = 76;
+function lerp(a, b, t) { return a + (b - a) * t; }
+
+function ArrowsUpIcon({ hovered }) {
+  const stripRef = React.useRef(null);
+  const st = React.useRef({ scroll: 0, vel: 0, last: 0 });
+  const hov = React.useRef(hovered);
+  React.useEffect(() => { hov.current = hovered; }, [hovered]);
+  const slot = 28, w = 72;
+  const ys = [-1, 0, 1, 2, 3, 4].map((k) => 6 + k * slot);
+  const arrow = (y) => `M48 ${y} L${48 - w / 2} ${y + 22} L${48 + w / 2} ${y + 22} Z`;
+  React.useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let raf;
+    const loop = (now) => {
+      const s = st.current;
+      const dt = Math.min(0.05, (now - (s.last || now)) / 1000); s.last = now;
+      const target = hov.current ? ARROW_SPEED : 0;
+      s.vel += (target - s.vel) * (1 - Math.pow(0.0009, dt));
+      s.scroll += s.vel * dt;
+      if (!hov.current && Math.abs(s.vel) < 2) {
+        const snap = Math.round(s.scroll / slot) * slot;
+        s.scroll = lerp(s.scroll, snap, 1 - Math.pow(0.0001, dt));
+      }
+      const ty = -(((s.scroll % slot) + slot) % slot);
+      if (stripRef.current) stripRef.current.setAttribute('transform', `translate(0 ${ty.toFixed(2)})`);
+      if (!reduced) raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+  return (
+    <svg className="icon" viewBox="0 0 96 96" aria-hidden="true">
+      <defs><clipPath id="clip-arrows"><rect x="0" y="0" width="96" height="96" /></clipPath></defs>
+      <g className="fit">
+        <g clipPath="url(#clip-arrows)">
+          <g ref={stripRef}>
+            {ys.map((y, i) => <path key={i} className="lit" d={arrow(y)} />)}
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+}
+
+function Card() {
+  const [hover, setHover] = React.useState(false);
+  return (
+    <div className={`box${hover ? ' is-hot' : ''}`}
+         onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <div className="tex" />
+      <svg className="grain" width="100%" height="100%" preserveAspectRatio="none" aria-hidden="true">
+        <filter id="grain-arrows" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" seed="7" />
+          <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.05 0" />
+        </filter>
+        <rect x="0" y="0" width="100%" height="100%" filter="url(#grain-arrows)" />
+      </svg>
+      <ArrowsUpIcon hovered={hover} />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Card />);
+</script>
+</body>
+</html>
