@@ -8047,12 +8047,12 @@ h1.display-heading {
   transition-delay: 0.4s;
 }
 
-.engagement-card:hover {
+/* .engagement-card:hover {
   border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-}
+} */
 
 .engagement-card-header {
   display: flex;
