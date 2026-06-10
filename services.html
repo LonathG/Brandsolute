@@ -310,6 +310,16 @@
     .page-nav, .in-page-link-wrap, .in-page-link {
       background-color: #131313 !important;
     }
+    
+    .accordion-wrap.faq-boxed {
+      border-radius: 12px;
+      background-color: #121212;
+      padding: 0 40px;
+      margin-bottom: 48px;
+    }
+    .accordion-wrap.faq-boxed .accordion-item:last-child {
+      border-bottom: none;
+    }
   </style>
 </head>
 
@@ -487,6 +497,11 @@
 
           .wide-section-content.hero-2 {
             min-height: 100vh !important;
+          }
+
+          .main-container.inside-wide-section {
+            justify-content: flex-end !important;
+            padding-bottom: 12vh !important;
           }
 
           @media (max-width: 767px) {
@@ -1179,7 +1194,7 @@
           style="-webkit-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
           class="section-contents">
           <div class="heading-h2">Frequently Asked Questions</div>
-          <div class="accordion-wrap">
+          <div class="accordion-wrap faq-boxed">
             <div class="accordion-item">
               <div class="accordion-title">
                 <div class="accordion-title-text">Do we have to engage all four areas?</div><img
