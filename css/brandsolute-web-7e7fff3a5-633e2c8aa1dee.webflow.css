@@ -8177,3 +8177,23 @@ h1.display-heading {
 }
 
 .industry-detail-card .arrow-link { opacity: 0.7; }
+
+/* Contact Form Overrides to match Figma */
+.contact-form .form-input {
+  border-radius: 4px !important;
+}
+.contact-form .button.left {
+  border-radius: 100px !important;
+  padding: 14px 28px !important;
+  font-size: 11px !important;
+  letter-spacing: 0.5px !important;
+  font-weight: 500 !important;
+  background-color: #333333 !important;
+  color: #fff !important;
+  width: auto !important;
+}
+.contact-form .heading-h5.body-text {
+  opacity: 0.7;
+  font-weight: 400;
+  line-height: 1.5;
+}
