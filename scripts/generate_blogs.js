@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-const http = require('http'); // Strapi is HTTP locally
+const https = require('https'); // Strapi is HTTPS in production
 const cheerio = require('cheerio');
 
-const STRAPI_URL = 'http://localhost:1337';
+const STRAPI_URL = 'https://api.thebrandsolute.com';
 
 function fetchBlogs() {
   return new Promise((resolve, reject) => {
-    http.get(`${STRAPI_URL}/api/blogs?populate=*`, (res) => {
+    https.get(`${STRAPI_URL}/api/blogs?populate=*`, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => resolve(JSON.parse(data)));
