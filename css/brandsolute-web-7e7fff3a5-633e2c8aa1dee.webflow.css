@@ -24,7 +24,7 @@
 
 :root {
   --colors-interface--dark: #1e1e1e;
-  --typefaces--body: Poppins, sans-serif;
+  --typefaces--body: "Google Sans", sans-serif;
   --colors-interface--white: white;
   --typography--body-size: 16px;
   --typography--body-line-height: 1.4em;
@@ -6490,7 +6490,7 @@ figure {
 @media screen and (max-width: 767px) {
   body {
     --colors-interface--dark: #1e1e1e;
-    --typefaces--body: Poppins, sans-serif;
+    --typefaces--body: "Google Sans", sans-serif;
     --colors-interface--white: white;
     --typography--body-size: 16px;
     --typography--body-line-height: 1.4em;
@@ -6993,7 +6993,7 @@ figure {
 @media screen and (max-width: 479px) {
   body {
     --colors-interface--dark: #1e1e1e;
-    --typefaces--body: Poppins, sans-serif;
+    --typefaces--body: "Google Sans", sans-serif;
     --colors-interface--white: white;
     --typography--body-size: 16px;
     --typography--body-line-height: 1.4em;
