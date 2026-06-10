@@ -299,15 +299,17 @@
       margin: 0 !important;
     }
 
-    
+
     /* Hover effect without glow */
     .quick-stack .button-3:hover {
       border-color: #919D73 !important;
       transform: translateY(-2px) !important;
       box-shadow: none !important;
     }
-    
-
+    /* Override nav backgrounds for the #131313 section */
+    .page-nav, .in-page-link-wrap, .in-page-link {
+      background-color: #131313 !important;
+    }
   </style>
 </head>
 
@@ -649,28 +651,36 @@
       </div>
     </div>
   </section>
-  <section class="section no-top-padding">
+  <section class="section no-top-padding" style="background-color: #131313;">
     <div class="main-container">
+      <div class="vertical-content" style="margin-bottom: 48px; margin-top: 70px;">
+        <div data-wf--badge-title--variant="base" class="badge-title">
+          <div class="square"></div>
+          <div class="badge-text">Our Services</div>
+        </div>
+        <div class="heading-h2">Outcome-driven engagements <br> for alignment, clarity and growth</div>
+      </div>
+
       <div class="industries-section">
         <div class="page-nav">
           <div class="in-page-link-wrap">
             <div class="in-page-dot"></div>
-            <a href="#pharmaceuticals" class="in-page-link">Brand Strategy</a>
+            <a href="#BrandStrategy" class="in-page-link">Brand Strategy</a>
           </div>
           <div class="in-page-link-wrap">
             <div class="in-page-dot"></div>
-            <a href="#" class="in-page-link">Growth Marketing</a>
+            <a href="#GrowthMarketing" class="in-page-link">Growth Marketing</a>
           </div>
           <div class="in-page-link-wrap">
             <div class="in-page-dot"></div>
-            <a href="#" class="in-page-link">Digital Experiences</a>
+            <a href="#DigitalExperiences" class="in-page-link">Digital Experiences</a>
           </div>
           <div class="in-page-link-wrap">
             <div class="in-page-dot"></div>
-            <a href="#" class="in-page-link">Data Intelligence</a>
+            <a href="#DataIntelligence" class="in-page-link">Data Intelligence</a>
           </div>
         </div>
-        <div id="pharmaceuticals" class="industry-section">
+        <div id="BrandStrategy" class="industry-section">
           <div class="industry-grid">
             <div data-delay="4000" data-animation="cross" class="industry-sidebar static w-slider" data-autoplay="true"
               data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0"
@@ -701,6 +711,7 @@
               </div>
               <div class="dot-nav w-slider-nav"></div>
             </div>
+
             <div class="industry-detail-card">
               <div class="heading-h3">Brand Strategy</div>
               <div class="heading-h5 industry-text">Brand Strategy defines why the business should matter, who it has to
@@ -712,31 +723,47 @@
                 class="w-layout-layout quick-stack wf-layout-layout">
                 <div class="w-layout-cell">
                   <!-- <a href="#" class="button-3 w-button">Brand Strategy</a> -->
-                  <a href="#" class="button-3 w-button" data-desc="The single space you own in the market, defined sharply enough that the whole team can defend it.">Brand Positioning</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The single space you own in the market, defined sharply enough that the whole team can defend it.">Brand
+                    Positioning</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="How every brand, product and sub-brand in the portfolio relates to the others. One logic, not a list.">Brand Architecture</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="How every brand, product and sub-brand in the portfolio relates to the others. One logic, not a list.">Brand
+                    Architecture</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The mark, the colour, the type and the rules. Consistent whether it is a billboard or a phone screen.">Visual Identity</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The mark, the colour, the type and the rules. Consistent whether it is a billboard or a phone screen.">Visual
+                    Identity</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The story that explains what the business does and why it matters, in words every team can carry.">Messaging & Narrative</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The story that explains what the business does and why it matters, in words every team can carry.">Messaging
+                    & Narrative</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="How the brand sounds in every sentence. A tone the whole team can match, not just the people who write for a living.">Verbal Identity</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="How the brand sounds in every sentence. A tone the whole team can match, not just the people who write for a living.">Verbal
+                    Identity</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Finding names for the company, the products and every layer between them. Ownable by you, understood by everyone.">Nomenclature</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Finding names for the company, the products and every layer between them. Ownable by you, understood by everyone.">Nomenclature</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Ideas built to move the market and earn their place in the numbers.">Brand Campaigns</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Ideas built to move the market and earn their place in the numbers.">Brand Campaigns</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The internal standards and behaviours that make the external brand credible. Not decoration. The reason it holds.">Brand Culture</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The internal standards and behaviours that make the external brand credible. Not decoration. The reason it holds.">Brand
+                    Culture</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="How brand perception moves in market, tracked precisely. The basis for positioning decisions that hold.">Brand Intelligence</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="How brand perception moves in market, tracked precisely. The basis for positioning decisions that hold.">Brand
+                    Intelligence</a>
                 </div>
               </div>
               <div class="heading-h5 industry-text">The single space you own in the market, defined sharply enough that
@@ -745,7 +772,7 @@
             </div>
           </div>
         </div>
-        <div id="pharmaceuticals" class="industry-section">
+        <div id="GrowthMarketing" class="industry-section">
           <div class="industry-grid">
             <div class="industry-detail-card">
               <div class="heading-h3">Growth Marketing</div>
@@ -757,31 +784,47 @@
               <div id="w-node-_552c76aa-dd46-d8d2-282c-f2552c416e3e-ed5471a8"
                 class="w-layout-layout quick-stack wf-layout-layout">
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Campaigns on the platforms your buyers use, run against acquisition cost and return.">Paid Social</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Campaigns on the platforms your buyers use, run against acquisition cost and return.">Paid
+                    Social</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The moment someone searches for what you offer. The work is ensuring they find you first.">Paid Search</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The moment someone searches for what you offer. The work is ensuring they find you first.">Paid
+                    Search</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Visibility in search results and AI answers that the right buyers trust. Earned, not paid for.">SEO & AI Search</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Visibility in search results and AI answers that the right buyers trust. Earned, not paid for.">SEO
+                    & AI Search</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Automated buying across display, video and the open web. Reaching the audience beyond the walled gardens.">Programmatic Ads</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Automated buying across display, video and the open web. Reaching the audience beyond the walled gardens.">Programmatic
+                    Ads</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The traffic is there. The work is ensuring more of it converts into customers.">CRO</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The traffic is there. The work is ensuring more of it converts into customers.">CRO</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="How the marketing numbers connect to revenue, pipeline and retention. Not a channel report. A business view.">Marketing Intelligence</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="How the marketing numbers connect to revenue, pipeline and retention. Not a channel report. A business view.">Marketing
+                    Intelligence</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="A page with one job. Built to turn the click into a conversion.">Landing Pages</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="A page with one job. Built to turn the click into a conversion.">Landing Pages</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Made in batches, tested against each other, with the best ones earning more spend.">Performance Creatives</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Made in batches, tested against each other, with the best ones earning more spend.">Performance
+                    Creatives</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Structured tests that settle creative and copy decisions with evidence. Not intuition.">A/B Test</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Structured tests that settle creative and copy decisions with evidence. Not intuition.">A/B
+                    Test</a>
                 </div>
               </div>
               <div class="heading-h5 industry-text">Reach & convert vast new audiences with the power of social media
@@ -818,7 +861,7 @@
             </div>
           </div>
         </div>
-        <div id="pharmaceuticals" class="industry-section">
+        <div id="DigitalExperiences" class="industry-section">
           <div class="industry-grid">
             <div data-delay="4000" data-animation="cross" class="industry-sidebar static w-slider" data-autoplay="true"
               data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0"
@@ -854,31 +897,48 @@
               <div id="w-node-_826e54bd-5f95-a18c-63cd-e6d243a0cbea-ed5471a8"
                 class="w-layout-layout quick-stack wf-layout-layout">
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The build behind the experience. Stable, fast, handed over with documentation your team can work from.">Web Development</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The build behind the experience. Stable, fast, handed over with documentation your team can work from.">Web
+                    Development</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Screens and flows laid out until the journey is intuitive and the next step never needs explaining.">UX/UI Design</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Screens and flows laid out until the journey is intuitive and the next step never needs explaining.">UX/UI
+                    Design</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="A structural review of the site's performance, with the biggest opportunities ranked and scoped.">Website Analysis & Audit</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="A structural review of the site's performance, with the biggest opportunities ranked and scoped.">Website
+                    Analysis & Audit</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The underlying structure of the site: where content lives and how the journey is built.">Information Architecture</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The underlying structure of the site: where content lives and how the journey is built.">Information
+                    Architecture</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="A content management system built with guardrails. Your team updates the site. Consistency stays.">CMS Development</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="A content management system built with guardrails. Your team updates the site. Consistency stays.">CMS
+                    Development</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The full journey reviewed end to end. Every friction point, every drop-off, ranked by what to fix first.">Experience Audits</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The full journey reviewed end to end. Every friction point, every drop-off, ranked by what to fix first.">Experience
+                    Audits</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The sequence between interest and commitment, built until nothing stands between them.">Booking & Conversion Flows</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The sequence between interest and commitment, built until nothing stands between them.">Booking
+                    & Conversion Flows</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The connections between the site and the tools behind it. Payment, booking, CRM, analytics. Joined without manual gaps.">Technical Integrations</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The connections between the site and the tools behind it. Payment, booking, CRM, analytics. Joined without manual gaps.">Technical
+                    Integrations</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Logged-in spaces for customers, partners or teams. Where the ongoing relationship has a home.">Portals</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Logged-in spaces for customers, partners or teams. Where the ongoing relationship has a home.">Portals</a>
                 </div>
               </div>
               <div class="heading-h5 industry-text">For businesses whose website or digital presence no longer matches
@@ -886,7 +946,7 @@
             </div>
           </div>
         </div>
-        <div id="pharmaceuticals" class="industry-section">
+        <div id="DataIntelligence" class="industry-section">
           <div class="industry-grid">
             <div class="industry-detail-card">
               <div class="heading-h3">Data Intelligence</div>
@@ -897,31 +957,48 @@
               <div id="w-node-_4acddb26-637c-5067-c334-3edf701e4385-ed5471a8"
                 class="w-layout-layout quick-stack wf-layout-layout">
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The layer that connects every data source into one clean, trusted view. Nothing downstream works without it.">Data Infrastructure</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The layer that connects every data source into one clean, trusted view. Nothing downstream works without it.">Data
+                    Infrastructure</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The business performance view that replaces the deck you build before every board meeting.">Executive Dashboards</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The business performance view that replaces the deck you build before every board meeting.">Executive
+                    Dashboards</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Built for a specific team or a specific question. Not a copy of the executive view.">Custom Dashboards</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Built for a specific team or a specific question. Not a copy of the executive view.">Custom
+                    Dashboards</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="How the marketing numbers connect to revenue, pipeline and retention. Not a channel report. A business view.">Marketing Intelligence</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="How the marketing numbers connect to revenue, pipeline and retention. Not a channel report. A business view.">Marketing
+                    Intelligence</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="How brand perception moves in market, tracked precisely. The basis for positioning decisions that hold.">Brand Intelligence</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="How brand perception moves in market, tracked precisely. The basis for positioning decisions that hold.">Brand
+                    Intelligence</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The journey from awareness to revenue, mapped precisely. Where it accelerates and where it does not.">Funnel Diagnostics</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The journey from awareness to revenue, mapped precisely. Where it accelerates and where it does not.">Funnel
+                    Diagnostics</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Where the business is heading, modelled on what is actually happening, not what was budgeted.">Forecasting</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Where the business is heading, modelled on what is actually happening, not what was budgeted.">Forecasting</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="Revenue, margin, operations, and people in one view. The full business, not just the marketing layer.">Business Performance</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="Revenue, margin, operations, and people in one view. The full business, not just the marketing layer.">Business
+                    Performance</a>
                 </div>
                 <div class="w-layout-cell">
-                  <a href="#" class="button-3 w-button" data-desc="The data behind your best customers: who they are, how they buy, and what makes them stay.">Audience & Customer Insights</a>
+                  <a href="#" class="button-3 w-button"
+                    data-desc="The data behind your best customers: who they are, how they buy, and what makes them stay.">Audience
+                    & Customer Insights</a>
                 </div>
               </div>
               <div class="heading-h5 industry-text">Reach & convert vast new audiences with the power of social media.
@@ -1069,7 +1146,7 @@
       })();
     </script>
   </section>
-  <section class="section bottom-padding-l">
+  <section class="section bottom-padding-l" style="background-color: #131313;">
     <div class="main-container">
       <div class="grid">
         <div data-w-id="2f9e32f8-b36a-c099-0318-5ac5cbfc78a8"
@@ -1431,47 +1508,47 @@
 
 
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const stacks = document.querySelectorAll('.quick-stack');
-    stacks.forEach(stack => {
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const stacks = document.querySelectorAll('.quick-stack');
+      stacks.forEach(stack => {
         const textElement = stack.nextElementSibling;
         const buttons = stack.querySelectorAll('.button-3');
         if (buttons.length > 0 && textElement && textElement.classList.contains('industry-text')) {
-            // Save original text of the first button
-            const defaultText = buttons[0].getAttribute('data-desc') || textElement.innerText;
-            
-            // Add CSS transition for smooth fading
-            textElement.style.transition = 'opacity 0.15s ease-in-out';
-            let timeoutId;
-            
-            buttons.forEach(btn => {
-                btn.addEventListener('mouseenter', () => {
-                    const desc = btn.getAttribute('data-desc');
-                    if (desc && textElement.innerText !== desc) {
-                        textElement.style.opacity = '0';
-                        clearTimeout(timeoutId);
-                        timeoutId = setTimeout(() => {
-                            textElement.innerText = desc;
-                            textElement.style.opacity = '1';
-                        }, 150);
-                    }
-                });
-                btn.addEventListener('mouseleave', () => {
-                    if (textElement.innerText !== defaultText) {
-                        textElement.style.opacity = '0';
-                        clearTimeout(timeoutId);
-                        timeoutId = setTimeout(() => {
-                            textElement.innerText = defaultText;
-                            textElement.style.opacity = '1';
-                        }, 150);
-                    }
-                });
+          // Save original text of the first button
+          const defaultText = buttons[0].getAttribute('data-desc') || textElement.innerText;
+
+          // Add CSS transition for smooth fading
+          textElement.style.transition = 'opacity 0.15s ease-in-out';
+          let timeoutId;
+
+          buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+              const desc = btn.getAttribute('data-desc');
+              if (desc && textElement.innerText !== desc) {
+                textElement.style.opacity = '0';
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                  textElement.innerText = desc;
+                  textElement.style.opacity = '1';
+                }, 150);
+              }
             });
+            btn.addEventListener('mouseleave', () => {
+              if (textElement.innerText !== defaultText) {
+                textElement.style.opacity = '0';
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                  textElement.innerText = defaultText;
+                  textElement.style.opacity = '1';
+                }, 150);
+              }
+            });
+          });
         }
+      });
     });
-});
-</script>
+  </script>
 
 </body>
 

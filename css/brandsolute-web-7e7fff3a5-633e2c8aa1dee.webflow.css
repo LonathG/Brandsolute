@@ -2317,7 +2317,7 @@ figure {
 }
 
 .body-text.logos-title {
-  min-width: 200px;
+  min-width: 230px;
   max-width: 650px;
 }
 
@@ -4714,7 +4714,7 @@ figure {
 }
 
 .logo-grid-item {
-  background-color: var(--colors-interface--dark-2);
+  background-color: #1e1e1e;
   justify-content: center;
   align-items: center;
   height: 144px;
