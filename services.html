@@ -301,7 +301,8 @@
 
 
     /* Hover effect without glow */
-    .quick-stack .button-3:hover {
+    .quick-stack .button-3:hover,
+    .quick-stack .button-3.active-capsule {
       border-color: #919D73 !important;
       transform: translateY(-2px) !important;
       box-shadow: none !important;
@@ -317,7 +318,7 @@
     .accordion-wrap.faq-boxed {
       border-radius: 12px;
       background-color: #121212;
-      padding: 0 40px;
+      padding: 0px 18px;
       margin-bottom: 48px;
     }
 
@@ -633,12 +634,12 @@
           }
         </style>
         <div data-w-id="dbb522d9-75ec-5fa3-5944-e3d3a48b2355"
-          style="display: block; text-align: center; max-width: 900px; margin: 0 auto 80px auto;">
+          style="display: block; text-align: center; max-width: 900px; margin: 0 auto auto;">
           <div id="w-node-dbb522d9-75ec-5fa3-5944-e3d3a48b2357-ed5471a8"
             data-w-id="dbb522d9-75ec-5fa3-5944-e3d3a48b2357"
             style="-webkit-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 24px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0; align-items: center; justify-content: center;"
             class="vertical-content">
-            <div class="heading-h3 body-text" style="text-align: center;">At any stage
+            <div class="heading-h3 body-text" style="text-align: left; color: #fff; font-size: 32px;">At any stage
               of growth, one thing sets the ceiling: the position,
               the
               demand, the experience, or the read on the numbers.<span
@@ -969,7 +970,7 @@
           <div class="industry-grid">
             <div class="industry-detail-card">
               <div class="heading-h3">Data Intelligence</div>
-              <div class="heading-h5 industry-text">DData Intelligence gives leadership one view it can trust. We
+              <div class="heading-h5 industry-text">Data Intelligence gives leadership one view it can trust. We
                 connect the data that matters, define the logic behind the numbers, and build the dashboards, reporting
                 and forecasts that make the trade-offs visible. The point is not more dashboards. It is a clearer view
                 of where to move next.</div>
@@ -1060,8 +1061,8 @@
 
         <!-- Main Display Heading -->
         <h2 class="heading-h2 engagement-heading">
-          <span class="faded-heading">Some businesses need a focused intervention. Others need a long-term growth
-            partner. </span>We structure our work around both
+          <span class="faded-heading">Some businesses need one focused engagement. Others need a long-term partner.
+          </span>We're built for both.
         </h2>
 
         <!-- Cards Grid -->
@@ -1165,7 +1166,7 @@
       })();
     </script>
   </section>
-  <section class="section bottom-padding-l" style="background-color: #131313;">
+  <section class="section bottom-padding" style="background-color: #131313;">
     <div class="main-container">
       <div class="grid">
         <div data-w-id="2f9e32f8-b36a-c099-0318-5ac5cbfc78a8"
@@ -1543,8 +1544,14 @@
           textElement.style.transition = 'opacity 0.15s ease-in-out';
           let timeoutId;
 
+          // Initialize first button as active
+          buttons[0].classList.add('active-capsule');
+
           buttons.forEach(btn => {
             btn.addEventListener('mouseenter', () => {
+              buttons.forEach(b => b.classList.remove('active-capsule'));
+              btn.classList.add('active-capsule');
+
               const desc = btn.getAttribute('data-desc');
               if (desc && textElement.innerText !== desc) {
                 textElement.style.opacity = '0';
@@ -1555,16 +1562,20 @@
                 }, 150);
               }
             });
-            btn.addEventListener('mouseleave', () => {
-              if (textElement.innerText !== defaultText) {
-                textElement.style.opacity = '0';
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => {
-                  textElement.innerText = defaultText;
-                  textElement.style.opacity = '1';
-                }, 150);
-              }
-            });
+          });
+
+          stack.addEventListener('mouseleave', () => {
+            buttons.forEach(b => b.classList.remove('active-capsule'));
+            buttons[0].classList.add('active-capsule');
+
+            if (textElement.innerText !== defaultText) {
+              textElement.style.opacity = '0';
+              clearTimeout(timeoutId);
+              timeoutId = setTimeout(() => {
+                textElement.innerText = defaultText;
+                textElement.style.opacity = '1';
+              }, 150);
+            }
           });
         }
       });
