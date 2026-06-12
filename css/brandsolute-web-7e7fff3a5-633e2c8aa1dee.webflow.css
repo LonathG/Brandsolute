@@ -5809,7 +5809,7 @@ figure {
 
 .button-2 {
   background-color: #33393f;
-  border-radius: 4px;
+  border-radius: 40px;
 }
 
 .button-3 {
@@ -7699,8 +7699,9 @@ figure {
   }
 
   .industry-section {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+    position: static !important;
   }
 
   .industry-detail-card {
@@ -8166,30 +8167,37 @@ h1.display-heading {
     font-size: 24px;
   }
 }
+
 /* Custom overrides for industry cards to match Figma */
 .industry-detail-card .list-item .body-text {
   opacity: 0.7;
 }
+
 .industry-detail-card .arrow-link-text {
   font-size: 14px;
   font-weight: 400;
   text-transform: none;
 }
 
-.industry-detail-card .arrow-link { opacity: 0.7; }
+.industry-detail-card .arrow-link {
+  opacity: 0.7;
+}
 
 /* Contact Form Overrides to match Figma */
 .contact-form {
   grid-template-columns: 1fr 1.4fr !important;
   align-items: start !important;
 }
+
 .contact-form .form-input {
   border-radius: 4px !important;
   height: 56px !important;
 }
+
 .contact-form .text-area {
   min-height: 240px !important;
 }
+
 .contact-form .button.left {
   border-radius: 100px !important;
   padding: 14px 28px !important;
@@ -8200,6 +8208,7 @@ h1.display-heading {
   color: #fff !important;
   width: auto !important;
 }
+
 .contact-form .heading-h5.body-text {
   opacity: 0.7;
   font-weight: 400;
