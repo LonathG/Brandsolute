@@ -3892,7 +3892,7 @@ figure {
 }
 
 .logo-marquee-item {
-  opacity: .5;
+  opacity: .9;
   max-height: 40px;
   width: auto;
 }
@@ -8019,7 +8019,7 @@ h1.display-heading {
 .engagement-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--grid-gaps--loose);
+  gap: 24px;
   width: 100%;
 }
 
@@ -8027,7 +8027,7 @@ h1.display-heading {
   background-color: var(--colors-interface--dark-2);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  padding: 48px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -8135,11 +8135,11 @@ h1.display-heading {
 @media screen and (max-width: 991px) {
   .engagement-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 16px;
   }
 
   .engagement-card {
-    padding: 36px;
+    padding: 18px;
   }
 
 }
@@ -8147,16 +8147,13 @@ h1.display-heading {
 @media screen and (max-width: 767px) {
   .engagement-heading {
     margin-bottom: 40px;
-
-
-
   }
 
 }
 
 @media screen and (max-width: 479px) {
   .engagement-card {
-    padding: 24px;
+    padding: 18px;
   }
 
   .engagement-card-title {
@@ -8192,6 +8189,8 @@ h1.display-heading {
 .contact-form .form-input {
   border-radius: 4px !important;
   height: 56px !important;
+  min-width: 576px !important;
+  /* width: 100% !important; */
 }
 
 .contact-form .text-area {
@@ -8213,4 +8212,6 @@ h1.display-heading {
   opacity: 0.7;
   font-weight: 400;
   line-height: 1.5;
+  justify-content: right;
+
 }
