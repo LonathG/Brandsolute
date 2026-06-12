@@ -3878,8 +3878,15 @@ figure {
   position: relative;
 }
 
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 .marquee-group {
-  flex: none;
+  flex: 0 0 auto;
+  min-width: max-content;
+  animation: scroll-marquee 40s linear infinite;
 }
 
 .logo-marquee-row {
