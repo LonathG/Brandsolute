@@ -8138,6 +8138,10 @@ h1.display-heading {
     gap: 16px;
   }
 
+  .contact-form {
+    grid-template-columns: 1fr !important;
+  }
+
   .engagement-card {
     padding: 18px;
   }
@@ -8155,6 +8159,7 @@ h1.display-heading {
   .engagement-card {
     padding: 18px;
   }
+
 
   .engagement-card-title {
     font-size: 28px;
@@ -8189,8 +8194,8 @@ h1.display-heading {
 .contact-form .form-input {
   border-radius: 4px !important;
   height: 56px !important;
-  min-width: 576px !important;
-  /* width: 100% !important; */
+  max-width: 576px !important;
+  width: 100% !important;
 }
 
 .contact-form .text-area {
