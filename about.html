@@ -4,11 +4,14 @@
 
 <head>
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-NGWVRNHH');</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NGWVRNHH');</script>
   <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <title>About Us | Brandsolute </title>
@@ -318,8 +321,8 @@
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGWVRNHH"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGWVRNHH" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div data-wf--navbar--variant="notch-style" class="navbar-wrapper">
     <div class="navbar-content">
@@ -463,7 +466,7 @@
             font-size: 18px;
             font-weight: 400;
             color: #fff;
-            margin-bottom: 48px;
+            margin-bottom: 0px;
           }
 
           .custom-hero-services-pill {
@@ -496,6 +499,48 @@
             margin-right: 12px;
           }
 
+          .wide-section-content.about-hero {
+            min-height: 100vh !important;
+          }
+
+          .main-container.inside-wide-section {
+            justify-content: flex-end !important;
+            padding-bottom: 6vh !important;
+          }
+
+          /* Who We Are static layout overrides */
+          .who-we-are-wrapper {
+            width: 100%;
+            position: relative;
+            display: block;
+            height: auto !important;
+          }
+
+          .who-we-are-row-wrap {
+            width: 100%;
+            position: static !important;
+          }
+
+          .who-we-are-row {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            grid-column-gap: var(--grid-gaps--default) !important;
+            grid-row-gap: var(--grid-gaps--default) !important;
+            width: 100% !important;
+          }
+
+          .who-we-are-row .service-item {
+            width: 100% !important;
+            max-width: 100% !important;
+            flex: 1 !important;
+            display: flex !important;
+          }
+
+          .section.top-padding-l.about-intro-section {
+            padding-top: 96px !important;
+            padding-bottom: 96px !important;
+          }
+
           @media (max-width: 767px) {
             .wide-section-content.about-hero {
               justify-content: center !important;
@@ -504,6 +549,7 @@
             .main-container.inside-wide-section {
               margin-top: auto !important;
               margin-bottom: auto !important;
+              padding-bottom: 0px !important;
             }
 
             .custom-hero-services-title {
@@ -517,6 +563,11 @@
             .custom-hero-services-pill {
               padding: 16px 24px;
               border-radius: 24px;
+            }
+
+            .who-we-are-row {
+              grid-template-columns: 1fr !important;
+              grid-row-gap: 36px !important;
             }
           }
         </style>
@@ -573,7 +624,7 @@
     </div>
   </section>
 
-  <section data-w-id="798fee0b-4c23-f6c6-82f5-bf2b47d11be0" style="opacity:0" class="section top-padding-l">
+  <section data-w-id="798fee0b-4c23-f6c6-82f5-bf2b47d11be0" style="opacity:0" class="section top-padding-l about-intro-section">
     <div class="main-container">
       <div class="about-us-intro">
         <div class="heading-h2 long-title">Brandsolute is built for companies entering a serious stage of
@@ -607,13 +658,13 @@
       </div>
     </div>
   </section>
-  <section class="section padding-l">
+  <section class="section padding-l" style="background-color: #131313;">
     <div class="main-container">
 
       <div class="vertical-content" style="margin-bottom: 48px;">
         <div data-wf--badge-title--variant="base" class="badge-title">
           <div class="square"></div>
-          <div class="badge-text">Our Services</div>
+          <div class="badge-text">Who We Are</div>
         </div>
         <div class="heading-h2">Builders before anything. Restless by <br /> nature. Absolute about the work.</div>
 
@@ -626,9 +677,9 @@
               class="faded-heading">We are collaborators, engineers, and strategic thinkers in equal measure.</span>
           </div>
         </div> -->
-        <div class="services-scrolling-wrapper">
-          <div class="services-scrolling-row-wrap">
-            <div class="services-scrolling-row">
+        <div class="who-we-are-wrapper">
+          <div class="who-we-are-row-wrap">
+            <div class="who-we-are-row">
               <div class="service-item">
                 <a href="about-1.html" aria-current="page" class="service-icon-box w-inline-block w--current">
                   <div class="grid-bg service-grid-bg"></div>
@@ -899,7 +950,7 @@
   </section>
 
 
-  <section class="section">
+  <section class="section" style="background-color: #131313;">
     <div class="main-container">
       <div class="vertical-section sticky-services">
         <div class="grid">
@@ -1019,22 +1070,33 @@
                   <img src="images/brandsolute-client-logos/Anker.png" alt="" class="logo-marquee-item">
                   <img src="images/brandsolute-client-logos/Soundcore-01.png" alt="" class="logo-marquee-item">
                   <img src="images/brandsolute-client-logos/MAS.png" alt="" class="logo-marquee-item">
-                  <img src="images/brandsolute-client-logos/unilever.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/unilever.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
                   <img src="images/brandsolute-client-logos/webxpay.png" alt="" class="logo-marquee-item">
                   <img src="images/brandsolute-client-logos/Intermarc.png" alt="" class="logo-marquee-item">
                   <img src="images/brandsolute-client-logos/Neelakandan.png" alt="" class="logo-marquee-item">
-                  <img src="images/brandsolute-client-logos/Browns-Hotels-_-Resorts-Logo-(1)-1.png" alt="" class="logo-marquee-item" style="max-height: 95px;">
-                  <img src="images/brandsolute-client-logos/Thema---Negative---Horizontal-Logo-1.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/brandsolute-client-logos/Ceylon-Hotel-Corp.png" alt="" class="logo-marquee-item" style="max-height: 95px;">
+                  <img src="images/brandsolute-client-logos/Browns-Hotels-_-Resorts-Logo-(1)-1.png" alt=""
+                    class="logo-marquee-item" style="max-height: 95px;">
+                  <img src="images/brandsolute-client-logos/Thema---Negative---Horizontal-Logo-1.png" alt=""
+                    class="logo-marquee-item" style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/Ceylon-Hotel-Corp.png" alt="" class="logo-marquee-item"
+                    style="max-height: 95px;">
                   <img src="images/brandsolute-client-logos/teleseen.png" alt="" class="logo-marquee-item">
-                  <img src="images/brandsolute-client-logos/findmyfare.png" alt="" class="logo-marquee-item" style="max-height: 75px;">
-                  <img src="images/brandsolute-client-logos/catch.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/brandsolute-client-logos/ekho.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/brandsolute-client-logos/Barcelo.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/brandsolute-client-logos/Reveal.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/brandsolute-client-logos/cookie-people.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/findmyfare.png" alt="" class="logo-marquee-item"
+                    style="max-height: 75px;">
+                  <img src="images/brandsolute-client-logos/catch.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/ekho.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/Barcelo.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/Reveal.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/cookie-people.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
                   <img src="images/brandsolute-client-logos/Hyperion.png" alt="" class="logo-marquee-item">
-                  <img src="images/brandsolute-client-logos/anantaya.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/anantaya.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
                 </div>
               </div>
               <div class="marquee-group">
@@ -1042,22 +1104,33 @@
                   <img src="images/brandsolute-client-logos/Anker.png" alt="" class="logo-marquee-item">
                   <img src="images/brandsolute-client-logos/Soundcore-01.png" alt="" class="logo-marquee-item">
                   <img src="images/brandsolute-client-logos/MAS.png" alt="" class="logo-marquee-item">
-                  <img src="images/brandsolute-client-logos/unilever.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/unilever.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
                   <img src="images/brandsolute-client-logos/webxpay.png" alt="" class="logo-marquee-item">
                   <img src="images/brandsolute-client-logos/Intermarc.png" alt="" class="logo-marquee-item">
                   <img src="images/brandsolute-client-logos/Neelakandan.png" alt="" class="logo-marquee-item">
-                  <img src="images/brandsolute-client-logos/Browns-Hotels-_-Resorts-Logo-(1)-1.png" alt="" class="logo-marquee-item" style="max-height: 95px;">
-                  <img src="images/brandsolute-client-logos/Thema---Negative---Horizontal-Logo-1.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/brandsolute-client-logos/Ceylon-Hotel-Corp.png" alt="" class="logo-marquee-item" style="max-height: 95px;">
+                  <img src="images/brandsolute-client-logos/Browns-Hotels-_-Resorts-Logo-(1)-1.png" alt=""
+                    class="logo-marquee-item" style="max-height: 95px;">
+                  <img src="images/brandsolute-client-logos/Thema---Negative---Horizontal-Logo-1.png" alt=""
+                    class="logo-marquee-item" style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/Ceylon-Hotel-Corp.png" alt="" class="logo-marquee-item"
+                    style="max-height: 95px;">
                   <img src="images/brandsolute-client-logos/teleseen.png" alt="" class="logo-marquee-item">
-                  <img src="images/brandsolute-client-logos/findmyfare.png" alt="" class="logo-marquee-item" style="max-height: 75px;">
-                  <img src="images/brandsolute-client-logos/catch.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/brandsolute-client-logos/ekho.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/brandsolute-client-logos/Barcelo.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/brandsolute-client-logos/Reveal.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
-                  <img src="images/brandsolute-client-logos/cookie-people.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/findmyfare.png" alt="" class="logo-marquee-item"
+                    style="max-height: 75px;">
+                  <img src="images/brandsolute-client-logos/catch.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/ekho.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/Barcelo.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/Reveal.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/cookie-people.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
                   <img src="images/brandsolute-client-logos/Hyperion.png" alt="" class="logo-marquee-item">
-                  <img src="images/brandsolute-client-logos/anantaya.png" alt="" class="logo-marquee-item" style="max-height: 55px;">
+                  <img src="images/brandsolute-client-logos/anantaya.png" alt="" class="logo-marquee-item"
+                    style="max-height: 55px;">
                 </div>
               </div>
             </div>
