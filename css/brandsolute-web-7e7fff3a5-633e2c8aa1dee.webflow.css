@@ -3879,8 +3879,13 @@ figure {
 }
 
 @keyframes scroll-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .marquee-group {
@@ -8196,13 +8201,34 @@ h1.display-heading {
 .contact-form {
   grid-template-columns: 1fr 1.4fr !important;
   align-items: start !important;
+  justify-items: stretch !important;
+  grid-column-gap: 120px !important;
+  column-gap: 120px !important;
 }
 
-.contact-form .form-input {
+@media screen and (min-width: 992px) {
+  .contact-form .heading-h2 {
+    white-space: nowrap !important;
+  }
+}
+
+.contact-form .form-input:not(textarea) {
   border-radius: 4px !important;
   height: 56px !important;
-  max-width: 576px !important;
+  max-width: 100% !important;
   width: 100% !important;
+}
+
+.contact-form textarea.form-input {
+  border-radius: 4px !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.contact-form .select-input {
+  height: 100% !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .contact-form .text-area {
