@@ -458,14 +458,23 @@
         </div>
         <div data-w-id="28846722-0a1e-8c00-a660-85f0db0276d2" class="section-contents scroll-reveal">
           <div class="form-block w-form">
-            <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form"
-              data-wf-page-id="6a100c7eee38aa18ed5471a4" data-wf-element-id="28846722-0a1e-8c00-a660-85f0db0276d9">
-              <input class="form-input w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Your name"
-                type="text" id="name-2">
-              <input class="form-input w-input" maxlength="256" name="Email-2" data-name="Email 2"
-                placeholder="Email Address" type="email" id="Email-2">
+            <!-- 1. UPDATED ACTION AND METHOD TO NATIVE WEB3FORMS ENDPOINT -->
+            <form id=" email-form" name="email-form" data-name="Email Form" method="POST"
+              action="https://api.web3forms.com/submit" class="form">
+
+              <!-- 2. REPLACE VALUE WITH THE ACCESS KEY RECEIVED IN YOUR EMAIL -->
+              <input type="hidden" name="access_key" value="e8ec2c66-abbf-45fd-919f-3bf43369dbdd">
+
+              <!-- Optional: HoneyPot anti-spam protection field (hidden from real users) -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <input class="form-input w-input" maxlength="256" name="name" placeholder="Your name" type="text"
+                id="name-2" required="">
+              <input class="form-input w-input" maxlength="256" name="email" placeholder="Email Address" type="email"
+                id="Email-2" required="">
+
               <div class="form-input select-wrap">
-                <select id="field-2" name="field-2" data-name="Field 2" class="select-input w-select">
+                <select id="field-2" name="services" class="select-input w-select" required="">
                   <option value="">I'm interested in the following services</option>
                   <option value="Brand Strategy">Brand Strategy</option>
                   <option value="Growth Marketing">Growth Marketing</option>
@@ -474,19 +483,22 @@
                 </select>
                 <img src="images/icon-interface-arrow-down.svg" alt="Down arrow icon" class="select-arrow">
               </div>
-              <input class="form-input w-input" maxlength="256" name="Company-2" data-name="Company 2"
-                placeholder="Company" type="text" id="Company-2">
+
+              <input class="form-input w-input" maxlength="256" name="company" placeholder="Company" type="text"
+                id="Company-2">
               <textarea placeholder="Tell us a bit about what we can do for you?" maxlength="5000" id="Message-3"
-                name="Message" data-name="Message" class="form-input text-area w-input"></textarea>
-              <label class="w-checkbox checkbox-field">
+                name="message" class="form-input text-area w-input" required=""></textarea>
+
+              <label class="w-checkbox checkbox-field" for="checkbox-2">
                 <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
-                <input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2"
-                  style="opacity:0;position:absolute;z-index:-1">
-                <span class="checkbox-label w-form-label" for="checkbox-2">
+                <input type="checkbox" id="checkbox-2" name="agree_to_terms"
+                  style="opacity:0;position:absolute;z-index:-1" required="">
+                <span class="checkbox-label w-form-label">
                   <span class="body-text">I have read and agree to the</span>
-                  <a href="legal.html">Terms</a>
+                  <a href="legal.html" target="_blank">Terms</a>
                 </span>
               </label>
+
               <input type="submit" data-wait="Please wait..." class="button left w-button" value="SEND MESSAGE">
             </form>
             <div class="form-success w-form-done">
