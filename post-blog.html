@@ -531,6 +531,61 @@
         min-height: 200px;
       }
     }
+
+    /* ── CTA Centering Fix & Mobile Optimization ── */
+    .cta-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
+    .cta-content .vertical-content {
+      align-items: center !important;
+      text-align: center !important;
+      width: 100% !important;
+    }
+    .cta-content .display-heading {
+      display: block !important;
+      text-align: center !important;
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      max-height: none !important;
+    }
+    .cta-content .display-heading span {
+      display: inline-block !important;
+      text-align: center !important;
+    }
+    .cta-content .buttons {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
+    @media (max-width: 767px) {
+      .cta-content {
+        margin: auto !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+      .cta-content .display-heading {
+        margin-top: 0 !important;
+        font-size: 32px !important;
+        line-height: 1.25 !important;
+        letter-spacing: -1px !important;
+      }
+      .cta-content .display-heading span {
+        display: inline !important;
+        margin-left: 0 !important;
+        font-size: inherit !important;
+        line-height: inherit !important;
+      }
+      .cta-content .display-heading span:first-child {
+        margin-right: 8px !important;
+      }
+    }
   
 </style>
   <footer class="footer" data-screen-label="Footer — noise to clarity field">
