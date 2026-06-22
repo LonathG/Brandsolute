@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Static HTML project",
   "scripts": {
-    "build:blogs": "node scripts/generate_blogs.js"
+    "build:blogs": "node scripts/generate_blogs.js",
+    "build:sitemaps": "node scripts/generate_sitemaps.js",
+    "build": "npm run build:blogs && npm run build:sitemaps"
   },
   "dependencies": {
     "cheerio": "^1.2.0"
