@@ -8280,3 +8280,21 @@ h1.display-heading {
 .cta-content .display-heading {
   margin-top: 0 !important;
 }
+
+.wide-section-content.cta {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.wide-section-content.cta .main-container.inside-wide-section {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: auto !important;
+  flex: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
