@@ -79,7 +79,7 @@
   --colors-brand--brand-2: #505050;
   --colors-brand--brand-3: #464646;
   --grid-gaps--loose: 48px;
-  --colors-interface--faded-heading: #ffffff80;
+  --colors-interface--faded-heading: rgba(255, 255, 255, 0.5);
   --grid-gaps--tight: 12px;
   --containers--content-xs: 384px;
   --grid-gaps--default: 24px;
@@ -6567,7 +6567,7 @@ figure {
     --colors-brand--brand-2: #a2b79f;
     --colors-brand--brand-3: #d8a373;
     --grid-gaps--loose: 48px;
-    --colors-interface--faded-heading: #ffffff80;
+    --colors-interface--faded-heading: rgba(255, 255, 255, 0.5);
     --grid-gaps--tight: 12px;
     --containers--content-xs: 384px;
     --grid-gaps--default: 24px;
@@ -7071,7 +7071,7 @@ figure {
     --colors-brand--brand-2: #a2b79f;
     --colors-brand--brand-3: #d8a373;
     --grid-gaps--loose: 48px;
-    --colors-interface--faded-heading: #ffffff80;
+    --colors-interface--faded-heading: rgba(255, 255, 255, 0.5);
     --grid-gaps--tight: 12px;
     --containers--content-xs: 384px;
     --grid-gaps--default: 24px;
