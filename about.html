@@ -487,8 +487,10 @@
             margin-right: 12px;
           }
 
-          .wide-section-content.about-hero {
-            min-height: 100vh !important;
+          @media (min-width: 768px) {
+            .wide-section-content.about-hero {
+              min-height: 100vh !important;
+            }
           }
 
           .main-container.inside-wide-section {
@@ -537,7 +539,7 @@
             .main-container.inside-wide-section {
               margin-top: auto !important;
               margin-bottom: auto !important;
-              padding-bottom: 0px !important;
+              padding-bottom: 56px !important;
             }
 
             .custom-hero-services-title {
