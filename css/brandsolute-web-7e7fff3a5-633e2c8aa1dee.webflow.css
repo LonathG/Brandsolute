@@ -84,6 +84,7 @@
   --containers--content-xs: 384px;
   --grid-gaps--default: 24px;
   --services-circles: var(--typefaces--badge);
+  --hero-sizes--fullscreen: 100vh;
   --hero-sizes--fullscreen: 100svh;
 }
 
@@ -199,6 +200,7 @@
   background-color: #f5f5f5;
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   padding: 20px;
 }
 
@@ -851,6 +853,7 @@
   background-color: #f5f5f5;
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   padding: 20px;
 }
 
@@ -888,6 +891,7 @@
   background-color: #f5f5f5;
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   padding: 20px;
 }
 
@@ -1129,6 +1133,7 @@ figure {
 }
 
 .section.wide-section {
+  max-height: 100vh;
   max-height: 100svh;
   padding: 0px var(--globals--wide-section-padding);
 }
@@ -1593,10 +1598,12 @@ figure {
 }
 
 .wide-section-content.hero-1 {
+  height: calc(100vh - 18px);
   height: calc(100svh - 18px);
 }
 
 .wide-section-content.hero-2 {
+  height: calc(100vh - 18px);
   height: calc(100svh - 18px);
   background-color: gray;
 }
@@ -2451,6 +2458,7 @@ figure {
   width: 100vw;
   max-width: 100%;
   height: 100vh;
+  height: 100svh;
   max-height: 100%;
   display: flex;
 }
@@ -5913,6 +5921,7 @@ figure {
 
   .wide-section-content.hero-1,
   .wide-section-content.hero-2 {
+    height: calc(100vh - 72px);
     height: calc(100svh - 72px);
   }
 
@@ -6027,6 +6036,7 @@ figure {
     justify-content: flex-start;
     align-items: flex-start;
     height: calc(100vh - 52px);
+    height: calc(100svh - 52px);
     padding: 24px;
     position: fixed;
     top: 0;
@@ -6562,6 +6572,7 @@ figure {
     --containers--content-xs: 384px;
     --grid-gaps--default: 24px;
     --services-circles: var(--typefaces--badge);
+    --hero-sizes--fullscreen: 100vh;
     --hero-sizes--fullscreen: 100svh;
   }
 
@@ -7065,6 +7076,7 @@ figure {
     --containers--content-xs: 384px;
     --grid-gaps--default: 24px;
     --services-circles: var(--typefaces--badge);
+    --hero-sizes--fullscreen: 100vh;
     --hero-sizes--fullscreen: 100svh;
   }
 
@@ -7961,6 +7973,7 @@ figure {
 /* Specifically solve layout clipping and make page-title and about-hero heros full screen */
 .wide-section-content.page-title.gray-hero-bg,
 .wide-section-content.about-hero.gray-hero-bg {
+  height: calc(100vh - 18px) !important;
   height: calc(100svh - 18px) !important;
   padding-bottom: 64px !important;
 }
